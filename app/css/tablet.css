@@ -178,20 +178,6 @@ ul {
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-#defaultApp__sidebarright__content__itemList li {
-  position: relative;
-  height: 41px;
-  line-height: 41px;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 0 26px 0 6px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  text-shadow: #fff 0 0 1px;
-  text-transform: capitalize;
-  background: #fff;
-}
-
 .list-arrow {
   position: absolute;
   right: 10px; top: 0; bottom: 0;
@@ -206,47 +192,6 @@ ul {
   overflow: auto;
 }
 
-#defaultApp__sidebarright__content__itemList li.item-youtube {
-  -webkit-box-sizing: border-box;
-  line-height: inherit;
-  padding: 6px;
-  width: 50%;
-  float: left;
-  height: 104px;
-}
-
-#defaultApp__sidebarright__content__itemList li:nth-child(odd) {
-  border-right: 1px solid #E0E0E0;
-}
-
-#defaultApp__sidebarright__content__itemList li.item-youtube .list-arrow {
-  display: none;
-}
-
-#defaultApp__sidebarright__content__itemList li.item-youtube .title {
-  font-weight: bold;
-  margin-right: 126px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-#defaultApp__sidebarright__content__itemList li.item-youtube .abstract {
-  color: gray;
-  font-size: 13px;
-  float: left;
-  white-space: normal;
-  margin-right: 126px;
-}
-
-#defaultApp__sidebarright__content__itemList li.item-youtube .preview {
-  position: absolute;
-  top: 6px; right: 6px;
-}
-
-#defaultApp__sidebarright__content__itemList li.item-youtube .preview img {
-/*  max-height: 40px;*/
-}
 
 #defaultApp__sidebarright__content__itemList,
 #defaultApp__sidebarright__content__detail {
@@ -281,7 +226,7 @@ ul {
   opacity: 0.7;
 }
 
-#defaultApp__sidebarright__content__detail__text {
+#defaultApp__sidebarright__content__detail__article {
   width: 80%;
   margin: auto;
 }

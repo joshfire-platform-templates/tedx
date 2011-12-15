@@ -14,7 +14,11 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
             {
               id: 'header',
               type: Panel,
-              children: [ UI.uiHeader ]
+              children: [{
+                id: 'title', // the title or the logo
+                type: Panel,
+                innerTemplate: UI.tplHeader
+              }]
             },
             {
               id: 'menu',
@@ -42,16 +46,22 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
               orientation: 'left', // left means a list going down
               loadingTemplate: '<div class="loading"></div>',
               itemTemplate: '<li id="<%=itemHtmlId%>" data-josh-ui-path="<%= path %>" data-josh-grid-id="<%= item.id %>" ' + 
-                              'class="josh-List joshover item-<%= item.source %> "' + 
+                              'class="josh-List joshover item-<%= item.itemType %> "' + 
                               '><%= itemInner %></li>',
               itemInnerTemplate:
-                '<% if (item.source == "twitter") { %>' +
-                  '<div class="tweet"><%= item.title %></div>' +
+                '<% if (item.itemType === "Article/Status") { %>' +
+                  '<div class="tweet"><%= item.name %></div>' +
                 '<% } else { %>' +
-                  '<div class="preview"><img src="http://placehold.it/200x150" /></div>' +
-                  '<div class="textsummary"><h3><%= item.title %></h3>' +
-                  '<% var len = Math.min(300, item.content.length); var truncated = item.content.substring(0, len); %>' +
-                  '<p><%= truncated %></p></div>' +
+                  '<div class="preview"><img src="http://placehold.it/200x150" /></div>' + // TODO: replace by item.thumbnail[0].contentURL when we have it
+                  '<div class="textsummary">' +
+                    '<h3><%= item.name %></h3>' +
+                    '<% var desc = item.articleBody || item.description;' +
+                    'if (desc) {' +
+                      'var len = Math.min(300, desc.length);' +
+                      'var truncated = desc.substring(0, len); %>' +
+                      '<p><%= truncated %></p>' +
+                    '<% } %>' +
+                  '</div>' +
                 '<% } %>',
               beforeGridExit: function(self, direction) {
                 switch (direction) {
@@ -66,11 +76,12 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
               type: List,
               loadingTemplate: '<div class="loading"></div>',
               itemTemplate: '<li id="<%=itemHtmlId%>" data-josh-ui-path="<%= path %>" data-josh-grid-id="<%= item.id %>" ' + 
-                              'class="josh-List joshover item-<%= item.source %> "' + 
+                              'class="josh-List joshover item-<%= item.itemType %> "' + 
                               '><%= itemInner %></li>',
               itemInnerTemplate:
-                '<% if (item.source == "youtube" || item.source == "flickr" ) { %>' +
-                  '<div class="preview"><img src="<%= item.image %>"></div><div class="title"><%= item.title %></div>' +
+                '<% if (item.itemType === "VideoObject" || item.itemType === "ImageObject") { %>' +
+                  UI.tplItemPreview +
+                  '<div class="title"><%= item.name %></div>' +
                 '<% } %>',
               beforeGridExit: function(self, direction) {
                 // This is a Hack. This should be handled by a Grid Element of the Joshfire framework.
@@ -121,12 +132,12 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
               uiDataSync: '/detail',
               loadingTemplate: '<div class="loading"></div>',
               innerTemplate:
-                '<div class="title"><h1><%= data.title %></h1>' +
-                '<p class="author"><%= data.creator || data.user %></p></div>' +
-                '<p><%= data.content %></p>',
+                '<div class="title"><h1><%= data.name %></h1>' +
+                UI.tplDataAuthor +
+                '<% if (data.articleBody) { print(data.articleBody); } %>',
               onData: function(ui) {
                 var thisEl = app.ui.element('/detail/text').htmlEl;
-                if (ui.data.source == 'youtube' || ui.data.source == 'twitter') {
+                if (ui.data.itemType === 'VideoObject' || ui.data.itemType === 'ImageObject') {
                   $(thisEl).hide();
                 } else {
                   $(thisEl).show();
@@ -142,7 +153,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                 var thisEl = app.ui.element('/detail/video').htmlEl,
                     player = app.ui.element('/detail/video/player.youtube');
 
-                if (ui.data.source == 'youtube') {
+                if ((ui.data.itemType === 'VideoObject') && ui.data.publisher && (ui.data.publisher.name === 'Youtube')) {
                   player.playWithStaticUrl({
                     url: ui.data.url.replace('http://www.youtube.com/watch?v=', ''),
                     width: '480px'
@@ -159,8 +170,9 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                   type: Panel,
                   uiDataSync: '/detail',                  
                   innerTemplate:
-                    '<div class="title"><h1><%= data.title %></h1>' +
-                    '<p class="author">By <strong><%= data.creator || data.user %></strong></p></div>'
+                    '<div class="title"><h1><%= data.name %></h1>' +
+                    UI.tplDataAuthor +
+                    '</div>'
                 },
                 {
                   id: 'player.youtube',
@@ -177,10 +189,11 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
               uiDataSync: '/detail',
               loadingTemplate: '<div class="loading"></div>',
               innerTemplate:
-                '<div class="tweet"><%= data.text %><p class="date"><%= data.date %></p></div>',
+                '<div class="tweet"><%= data.name %>' +
+                '<p class="date"><%= data.publishedDate %></p></div>',
               onData: function(ui) {
                 var thisEl = app.ui.element('/detail/twitter').htmlEl;
-                if (ui.data.source == 'twitter') {
+                if (ui.data.itemType === "Article/Status") {
                   $(thisEl).show();
                 } else {
                   $(thisEl).hide();

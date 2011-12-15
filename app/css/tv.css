@@ -71,7 +71,8 @@ color-stop(0.2, rgb(10,10,10)), color-stop(0.8, rgb(66,66,66)));
 
 }
 
-#defaultApp__sidebarleft__header img.applogo {
+.device-tv img.applogo {
+  height : auto;
   width : 100%;
 }
 

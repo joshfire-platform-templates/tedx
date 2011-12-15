@@ -59,7 +59,7 @@ Joshfire.define(['joshfire/uielements/list', 'joshfire/uielements/panel', 'joshf
                     '<% if(Joshfire.factory.config.app.logo) { %>' + 
                       '<img class="applogo" src="<%= Joshfire.factory.config.app.logo.url %>" alt="<%= Joshfire.factory.config.app.name %>" />' +
                     '<% } %>' +
-                    '<p class="appname"><%= Joshfire.factory.config.app.name %></p>' +
+                    '<h2 class="appname"><%= Joshfire.factory.config.app.name %></h2>' +
                     '<div class="abouthtml"><%= Joshfire.factory.config.template.options.abouthtml %></div>' +
                   '</div>',
 

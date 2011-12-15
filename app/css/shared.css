@@ -85,6 +85,99 @@ li.mainitemlist.list .tweet .user .name {
   font-size: 15px;
   margin-top: 6px;
  }
+ 
+.tweet .tweet-header {
+  background-image: url('../images/fond-twit.png'); 
+  height: 95px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+ 
+ 
+}
+
+.tweet .tweet-header .username {
+  color: #fff;
+  margin: 0 95px;
+  padding-top: 22px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+
+}
+
+.tweet .tweet-header .userlogin {
+  color: #fff;
+  margin: 0 95px;
+  padding-top: 1px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.tweet .tweet-header img {
+   height: 59px;
+   margin: 17px;
+   position: absolute;
+ 
+}
+
+.tweet .tweet-content .content {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  font-size: 20px;
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+
+.tweet .tweet-content .date {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  color: #c3c1c1;
+  font-size: 20px;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.aboutpage {
+  background-color: white;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.aboutpage .appname {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  margin: 0px 0 0 15px;
+  padding-top: 38px;
+}
+
+.aboutpage .abouthtml {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  margin: 0px 60px 0 15px;
+  font-weight: normal;
+}
+
+.aboutpage .mw-headline {
+   font-weight: 600;
+   font-size: 15px;
+    margin: 0 0 0 0;
+}
+
+.aboutpage h2 {
+  margin: 13px 0 0 0;
+}
+
+.aboutpage a {
+  color: black;
+}
+
 
 /* grid */
 
@@ -121,11 +214,11 @@ li.mainitemlist.rows {
 }
 
 li.mainitemlist.item-ArticleStatus:nth-child(odd) {
-  background: red;
+  background: #fff;
 }
 
 li.mainitemlist.item-ArticleStatus:nth-child(even) {
-  background: gray
+  background: #f2f2f2;
 }
 
 li.mainitemlist.rows .list-arrow {

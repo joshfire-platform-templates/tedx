@@ -98,72 +98,9 @@ ul {
   letter-spacing: 2px;
 }
 
-#defaultApp__content__itemList ul {
+.mainitemlist ul {
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
-/* ITEM LIST */
-
-#defaultApp__content__itemList li {
-  list-style-type: none;
-  position: relative;
-  overflow: hidden;
-  background: #fff; 
-
-}
-
-/* list */
-#defaultApp__content__itemList li.list {
-  position: relative;
-  min-height: 74px;
-  line-height: inherit;
-  border-bottom: 1px solid #cfcfcf;
-  background-image: url('../images/fond.png');
-  background-size: 100%;  
-}
-
-#defaultApp__content__itemList li.list .title {
-  font-weight: 500;
-  font-size: 12px;
-  color: #262626;
-  margin-left: 109px;
-  overflow: hidden;
-  float: left;
-  margin-top: 14px;
-  margin-right: 25px;
-}
-
-#defaultApp__content__itemList li.list .abstract {
-  color: #171717;
-  font-size: 13px;
-  float: left;
-  white-space: normal;
-  margin-right: 70px;
-  display: none;
-}
-
-#defaultApp__content__itemList li.list .preview {
-  position: absolute;
-}
-#defaultApp__content__itemList li.list .preview img {
-  height: 74px;
-}
-
-/* grid */
-
-#defaultApp__content__itemList li.grid {
-  float: left;
-  width: 25%;
-  height: 100px;
-  overflow: hidden;
-}
-
-#defaultApp__content__itemList li.grid .thumbnail {
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-}
-
 
 /* CONTENT */
 

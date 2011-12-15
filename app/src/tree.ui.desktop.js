@@ -1,4 +1,4 @@
-Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list', 'joshfire/uielements/panel', 'joshfire/uielements/panel.manager', 'joshfire/uielements/button', 'joshfire/adapters/ios/uielements/video.youtube'], function(Class, UITree, List, Panel, PanelManager, Button, Video) {
+Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list', 'joshfire/uielements/panel', 'joshfire/uielements/panel.manager', 'joshfire/uielements/button', 'joshfire/adapters/ios/uielements/video.youtube', 'src/ui-components'], function(Class, UITree, List, Panel, PanelManager, Button, Video, UI) {
 
   return Class(UITree, {
 
@@ -36,7 +36,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
               orientation: 'left',
               loadingTemplate: '<div class="loading"></div>',
               itemInnerTemplate:
-                '<%= item.title || item.text %>'
+                '<%= item.name %>'
             },
             {
               id: 'detail',
@@ -52,12 +52,12 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                   forceDataPathRefresh: true,
                   loadingTemplate: '<div class="loadin">Loading text</div>',
                   innerTemplate:
-                    '<div class="title"><h1><%= data.title %></h1>' +
-                    '<p class="author"><%= data.creator || data.user %></p></div>' +
+                    '<div class="title"><h1><%= data.name %></h1>' +
+                    UI.tplDataAuthor +
                     '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
                   onData: function(ui) {
                     var thisEl = app.ui.element('/content/detail/text').htmlEl;
-                    if (ui.data.source != 'youtube') {
+                    if (ui.data.itemType !== 'VideoObject') {
                       $(thisEl).show();
                     } else {
                       $(thisEl).hide();
@@ -74,7 +74,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                     var thisEl = app.ui.element('/content/detail/video').htmlEl,
                         player = app.ui.element('/content/detail/video/player.youtube');
 
-                    if (ui.data.source == 'youtube') {
+                    if ((ui.data.itemType === 'VideoObject') && ui.data.publisher && (ui.data.publisher.name === 'Youtube')) {
                       player.playWithStaticUrl({
                         url: ui.data.url.replace('http://www.youtube.com/watch?v=', ''),
                         width: '480px'
@@ -91,8 +91,8 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                       type: Panel,
                       uiDataMaster: '/content/itemList',
                       innerTemplate:
-                        '<div class="title"><h1><%= data.title %></h1>' +
-                        '<p class="author">By <strong><%= data.creator || data.user %></strong></p></div>'
+                        '<div class="title"><h1><%= data.name %></h1>' +
+                        UI.itemDataAuthor
                     },
                     {
                       id: 'player.youtube',

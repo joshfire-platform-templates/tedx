@@ -70,7 +70,7 @@ ul {
   font-weight: bold;
   height: 100%;
   line-height: 100%;
-  margin: 0;
+  margin: 10px;
   max-width: 15%;
   overflow: hidden;
   padding: 0 10px;
@@ -79,6 +79,10 @@ ul {
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
   white-space: nowrap;
   z-index: 10;
+  text-indent: 9999px;
+  background-image:url('../images/fleche.png');
+  background-repeat: no-repeat;
+  
 }
 
 #defaultApp__content {
@@ -231,7 +235,7 @@ ul {
 
 #defaultApp__footer li .picto {
   width: 76px;
-  height: 38px;
+  height: 39px;
   margin: auto;
   background-position: center;
 }
@@ -258,7 +262,7 @@ ul {
 }
 
 #defaultApp__footer li .picto.item-tweets {
-  background-image: url('../images/bird.png');
+  background-image: url('../images/twit.png');
   background-repeat: no-repeat;
 }
 

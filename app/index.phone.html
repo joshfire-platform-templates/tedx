@@ -16,7 +16,151 @@
     <!-- For nokia devices: -->
     <!-- <link rel="shortcut icon" href="img/l/apple-touch-icon.png"> -->
     <script data-main="./" src="joshfire/adapters/ios/bootstrap.js"></script>
-    <script data-joshfire-bootstrap src="http://localhost:40021/bootstrap/4ee62c09259c0b6d70000030/auto/tv/"></script>
+    <script type="text/javascript">(function() {
+
+  //todo merge in Joshfire?
+  window.JoshfirePlatformConfig = {"HOST":"platform.joshfire.com","PORT":80,"HOSTPORT":"platform.joshfire.com","DATAHOST":"data.joshfire.com","DATAPORT":80,"DATAHOSTPORT":"data.joshfire.com"};
+
+  var Joshfire = window.Joshfire || {};
+
+
+  Joshfire.factory = { config: {"app":{"name":"Event"},"template":{"name":"default","version":"0.0.1","options":{"abouthtml":""}}} };
+
+  Joshfire.factory.config.datasources = {"main":[{"name":"Youtube","db":"youtube","col":"videos","query":{"filter":{"feed":"","search":"chanel","playlist":"","user":""}}},{"name":"Flickr","db":"flickr","col":"photos","query":{"filter":{"api_key":"","set":"","search":"chanel"}}},{"name":"Twitter","db":"twitter","col":"tweets","query":{"filter":{"search":"chanel","user":""}}},{"name":"Feed","db":"feed","col":"rss","query":{"filter":{"url":"blog.steren.fr"}}}]};
+
+  (function(config) {
+
+  var _extend = function(obj1,obj2) {
+    for (var key in obj2 ) {
+      if ( obj2.hasOwnProperty(key) ) {
+        obj1[key] = obj2[key];
+      }
+    }
+    return obj1;
+  };
+
+  // https://github.com/IntoMethod/Lightweight-JSONP
+  var JSONP = (function(){
+    var counter = 0, head, query, key;
+    function load(url) {
+      var script = document.createElement('script'),
+        done = false;
+      script.src = url;
+      script.async = true;
+   
+      script.onload = script.onreadystatechange = function() {
+        if ( !done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") ) {
+          done = true;
+          script.onload = script.onreadystatechange = null;
+          if ( script && script.parentNode ) {
+            script.parentNode.removeChild( script );
+          }
+        }
+      };
+      if ( !head ) {
+        head = document.getElementsByTagName('head')[0];
+      }
+      head.appendChild( script );
+    }
+    function jsonp(url, params, callback) {
+      query = "?";
+      params = params || {};
+      for ( key in params ) {
+        if ( params.hasOwnProperty(key) ) {
+          query += encodeURIComponent(key) + "=" + encodeURIComponent(params[key]) + "&";
+        }
+      }
+      var jsonp = "json" + (++counter);
+      window.DatajsProxy[ jsonp ] = function(data){
+        callback(data);
+        try {
+          delete window.DatajsProxy[ jsonp ];
+        } catch (e) {}
+        window.DatajsProxy[ jsonp ] = null;
+      };
+   
+      load(url + query + "callback=DatajsProxy." + jsonp);
+      return jsonp;
+    }
+    return {
+      get:jsonp
+    };
+  }());
+
+
+  var collection = function(db, colname, options) {
+    
+    options = options || {};
+
+    this.find = function(query, callback) {
+
+      var finalQuery = {};
+      _extend(finalQuery,options); //Clone default options
+      _extend(finalQuery,query);
+
+      // Replace data source IDs by their associated dumpOptions.
+      // TODO make recursive.
+      if (typeof Joshfire=="object" && Joshfire.getDataSource) {
+        if (finalQuery.filter && finalQuery.filter.datasources) {
+          for (k in finalQuery.filter.datasources) {
+            if (finalQuery.filter.datasources[k] && finalQuery.filter.datasources.hasOwnProperty(k)) {
+              finalQuery.filter.datasources[k] = Joshfire.config.datasources[finalQuery.filter.datasources[k]];
+            }
+          }
+        }
+      }
+
+      //TODO json2.js
+      if (finalQuery.filter) {
+        finalQuery.filter = JSON.stringify(finalQuery.filter);
+      }
+      JSONP.get('http://' + config.DATAHOST + ':' + config.DATAPORT + '/api/'+ db +'/'+ colname, finalQuery, function(data) {
+        callback(null,data);
+      });
+    };
+
+    this.onLoaded = function(f) {
+      f();
+    };
+  };
+
+
+  var client = {
+    getCollection: function(db, colname, options, callback) {
+      return new collection(db,colname,options);
+    },
+    getCollectionDesc: function(db, colname, callback) {
+      JSONP.get('http://' + config.DATAHOST + ':' + config.DATAPORT + '/api/'+ db +'/'+ colname + '/_desc', null, function(data) {
+        callback(data);
+      });
+    }
+  };
+
+  window.DatajsProxy = window.Datajs = client;
+
+})(JoshfirePlatformConfig||{});
+
+
+  Joshfire.factory.getDataSource = function(datasourceName) {
+    var ds = Joshfire.factory.config.datasources[datasourceName];
+    if(toString.call(ds) == '[object Array]') {
+      var ret = {
+        children:[],
+        find:function() {} //todo auto-all a union operator
+      }; 
+      for( var i = 0; i < ds.length; i++ ) {
+        ret.children[i] = DatajsProxy.getCollection(ds[i].db, ds[i].col, ds[i].query);
+        ret.children[i].config = ds[i];
+      }
+      return ret;
+    } else {
+      return DatajsProxy.getCollection(ds.db, ds.col, ds.query);
+    }
+  };
+
+  window.Joshfire = Joshfire;
+
+})();</script>
   </head>
   <body>
     <div id="splashscreen"></div>

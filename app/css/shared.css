@@ -49,6 +49,43 @@ li.mainitemlist.list .preview img {
   height: 74px;
 }
 
+li.mainitemlist.list .tweet {
+  margin: 10px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ 
+}
+
+li.mainitemlist.list .tweet img {
+ height: 58px;
+ position: absolute;
+
+ 
+}
+
+li.mainitemlist.list .tweet .user .name {
+  margin-left: 73px;
+  font-size: 15px;
+  font-weight: 500;
+ }
+ 
+ .user{
+  margin-bottom: 0px;
+ }
+ 
+ li.mainitemlist.list .tweet .content {
+  margin-left: 73px;
+  font-size: 15px;
+  margin-top: 6px;
+  margin-bottom: 0px;
+ }
+ 
+ li.mainitemlist.list .tweet .date {
+  margin-left: 73px;
+  color: #dad5cd;
+  font-size: 15px;
+  margin-top: 6px;
+ }
+
 /* grid */
 
 li.mainitemlist.grid {
@@ -83,8 +120,12 @@ li.mainitemlist.rows {
   height: 104px;
 }
 
-li.mainitemlist:nth-child(odd) {
-  border-right: 1px solid #E0E0E0;
+li.mainitemlist.item-ArticleStatus:nth-child(odd) {
+  background: red;
+}
+
+li.mainitemlist.item-ArticleStatus:nth-child(even) {
+  background: gray
 }
 
 li.mainitemlist.rows .list-arrow {

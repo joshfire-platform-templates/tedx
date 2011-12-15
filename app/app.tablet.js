@@ -35,6 +35,13 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
       menu.subscribe('select', function(event, data) {
         var datasourceId = data[0][0];
 
+        // if about page
+        if(datasourceId == 'about') {
+          console.log("about");
+          _this.ui.element('/sidebarright/content/about').show();
+          return;
+        }
+
         // Set the new dataPath
         _this.ui.element('/sidebarright/content/itemList').setDataPath('/datasource/' + datasourceId + '/');
 

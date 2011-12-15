@@ -53,7 +53,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                   loadingTemplate: '<div class="loading"></div>',
                   itemTemplate: "<li id='<%=itemHtmlId%>' " + 
                             "data-josh-ui-path='<%= path %>' data-josh-grid-id='<%= item.id %>'" + 
-                            "class='josh-List joshover item-<%= item.itemType %> mainitemlist " + 
+                            "class='josh-List joshover item-<%= item.itemType.replace('/', '') %> mainitemlist " + 
                             // grid view
                             "<% if (item.itemType === 'ImageObject') { %>" +
                               "grid" +
@@ -76,7 +76,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                     '<% } else if (item.itemType === "ImageObject") { %>' +
                       UI.tplItemThumbnail +
                     '<% } else if (item.itemType === "Article/Status") { %>' +
-                      '<div class="tweet"><%= item.name %></div>' +
+                      UI.tplTweetItem +
                     '<% } else { %>' +
                       '<%= item.name %><span class="list-arrow"></span>' +
                     '<% } %>'
@@ -101,7 +101,26 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                         '<% if (data.articleBody) { print(data.articleBody); } %>',
                       onData: function(ui) {
                         var thisEl = app.ui.element('/sidebarright/content/detail/article').htmlEl;
-                        if (ui.data.itemType !== 'VideoObject' && ui.data.itemType !== 'ImageObject') {
+                        if (ui.data.itemType === 'VideoObject' || ui.data.itemType === 'ImageObject' || ui.data.itemType == 'Article/Status') {
+                          $(thisEl).hide();
+                        }
+                        else {
+                          $(thisEl).show();
+                        }
+                      }
+                    },
+                    {
+                      // Twitter
+                      id: 'twitter',
+                      type: Panel,
+                      uiDataMaster: '/sidebarright/content/itemList',
+                      forceDataPathRefresh: true,
+                      loadingTemplate: '<div class="loading"></div>',
+                      innerTemplate: UI.tplTweetPage,
+                      onData: function(ui) {
+                        var thisEl = app.ui.element('/sidebarright/content/detail/image').htmlEl;
+                        console.log(ui.data.itemType);
+                        if (ui.data.itemType === 'Article/Status') {
                           $(thisEl).show();
                         } else {
                           $(thisEl).hide();
@@ -167,6 +186,13 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                       ]
                     }
                   ]
+                },
+                {
+                  id: 'about',
+                  type: Panel,
+                  loadingTemplate: '<div class="loading"></div>',          
+                  autoShow: false,
+                  innerTemplate: UI.tplAboutPage
                 }
               ]
             }

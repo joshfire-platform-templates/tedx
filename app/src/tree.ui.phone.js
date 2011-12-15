@@ -38,13 +38,13 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
               loadingTemplate: '<div class="loading"></div>',
               itemTemplate: "<li id='<%=itemHtmlId%>' " + 
                             "data-josh-ui-path='<%= path %>' data-josh-grid-id='<%= item.id %>'" + 
-                            "class='josh-List joshover item-<%= item.itemType %> mainitemlist " + 
+                            "class='josh-List joshover item-<%= item.itemType.replace('/', '') %> mainitemlist " + 
                             // grid view
                             "<% if (item.itemType === 'ImageObject') { %>" +
-                              "grid" +
+                              " grid" +
                             "<% } else { %>" +
                             // list view
-                              "list" +
+                              " list" +
                             "<% } %>" +
                             "' >" +
                             "<%= itemInner %>" + 
@@ -99,24 +99,10 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                   uiDataMaster: '/content/itemList',
                   forceDataPathRefresh: true,
                   loadingTemplate: '<div class="loading"></div>',
-                  innerTemplate:
-                  '<div class="tweet">' +
-                    '<% if (data.author) { %>' +
-                      '<% if (data.author[0] && data.author[0].image) { %>' +
-                        '<img src="<%= data.author[0].image.contentURL %>" alt="" />' +
-                      '<% } %>' +
-                      '<p class="username"><%= data.author[0].name %></p>' +
-                      '<% if (data.publisher && (data.publisher.name === "Twitter")) { %>' +
-                        ' <p class="userlogin">@<%= data.author[0].url.replace("http://twitter.com/", "") %></p>' +
-                      '<% } %>' +
-                    '<% } %>' +
-                    '<p class="content"><%= data.name %></p>' +
-                    '<p class="date"><%= data.datePublished %></p>' +                  
-                  '</div>',
-
+                  innerTemplate: UI.tplTweetPage,
                   onData: function(ui) {
                     var thisEl = app.ui.element('/content/detail/image').htmlEl;
-                    if (ui.data.source =='twitter') {
+                    if (ui.data.itemType === 'Article/Status') {
                       $(thisEl).show();
                     } else {
                       $(thisEl).hide();
@@ -188,13 +174,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
               type: Panel,
               loadingTemplate: '<div class="loading"></div>',          
               autoShow: false,
-              innerTemplate:
-                  '<div class="aboutpage">' +
-                    '<% if(Joshfire.factory.config.app.logo) { %>' + 
-                      '<img class="applogo" src="<%= Joshfire.factory.config.app.logo.url %>" alt="<%= Joshfire.factory.config.app.name %>" />' +
-                    '<% } %>' +
-                    '<p class="appname"><%= Joshfire.factory.config.app.name %></p>' +
-                  '</div>'
+              innerTemplate: UI.tplAboutPage
             }
           ]
         },

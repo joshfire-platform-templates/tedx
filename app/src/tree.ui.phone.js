@@ -61,8 +61,13 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                   UI.tplTweetItem +
                 '<% } else if (item.itemType === "Event") { %>' +
                   UI.tplEventItem +   
-                //'<% } else if (item.itemType === "Article && item.url && item.url.indexOf("spreadsheed.google.com") != -1) { %>' +
-                //  UI.tplEventItem +                    
+                '<% } else if (item.itemType === "Article" && item.url && item.url.indexOf("spreadsheets.google.com") != -1) { %>' +
+                  '<div class="directory">' +
+                    UI.tplItemPreview +
+                    '<p class="name"><%= item.name %></p>' + 
+                    '<p class="description"><%= item.description %></p>' + 
+                    '<span class="list-arrow"></span>' +
+                  '</div>' +
                 '<% } else { %>' +
                 // check if 
                   UI.tplItemPreview +
@@ -77,7 +82,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
               autoShow: false,
               children: [
                 {
-                  // Article
+                  // Article and default
                   id: 'article',
                   type: Panel,
                   uiDataMaster: '/content/itemList',
@@ -94,6 +99,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                         || ui.data.itemType === 'ImageObject' 
                         || ui.data.itemType === 'Article/Status'
                         || ui.data.itemType === 'Event'
+                        || (ui.data.itemType === 'Article' && ui.data.url && ui.data.url.indexOf("spreadsheets.google.com") != -1)
                       ) {
                       $(thisEl).hide();
                     }
@@ -113,6 +119,32 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                   onData: function(ui) {
                     var thisEl = app.ui.element('/content/detail/twitter').htmlEl;
                     if (ui.data.itemType === 'Article/Status') {
+                      $(thisEl).show();
+                    } else {
+                      $(thisEl).hide();
+                    }
+                  }
+                },
+                {
+                  // Google spreadsheets
+                  id: 'google',
+                  type: Panel,
+                  uiDataMaster: '/content/itemList',
+                  forceDataPathRefresh: true,
+                  loadingTemplate: '<div class="loading"></div>',
+                  innerTemplate:  '<div class="directory">' +
+                                    '<% if (data.image) { %>' +
+                                      '<div class="picture"><img src="<%= data.image.contentURL %>"></div>' +
+                                    '<% } %>' +
+                                    '<p class="name"><%= data.name %></p>' + 
+                                    '<p class="description"><%= data.description %></p>' + 
+                                    '<% if (data.articleBody) { %>' +
+                                      '<p class="content"><%= data.articleBody %></p>' +
+                                    '<% } %>' +
+                                  '</div>',
+                  onData: function(ui) {
+                    var thisEl = app.ui.element('/content/detail/google').htmlEl;
+                    if (ui.data.itemType === 'Article' && ui.data.url && ui.data.url.indexOf("spreadsheets.google.com") != -1) {
                       $(thisEl).show();
                     } else {
                       $(thisEl).hide();

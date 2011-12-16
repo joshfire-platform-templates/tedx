@@ -23,7 +23,7 @@
         "devices": "phone",
         "startfile": "app/index.phone.html",
         "images":"marketing/image-small.png",
-        "screenshots":["marketing/screenshot-tv.png"]
+        "screenshots":["marketing/screenshot-phone.png"]
       },
       {
         "devices": "tablet",
@@ -35,7 +35,7 @@
         "devices": "tv",
         "startfile": "app/index.tv.html",
         "images":"marketing/image-small.png",
-        "screenshots":["marketing/screenshot-tv.png"]
+        "screenshots":["marketing/screenshot-tv.jpg"]
       },
       {
         "devices": "*",

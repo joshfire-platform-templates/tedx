@@ -59,7 +59,13 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                   UI.tplItemThumbnail +
                 '<% } else if (item.itemType === "Article/Status") { %>' +
                   UI.tplTweetItem +
+                '<% } else if (item.itemType === "Event") { %>' +
+                  UI.tplEventItem +   
+                //'<% } else if (item.itemType === "Article && item.url && item.url.indexOf("spreadsheed.google.com") != -1) { %>' +
+                //  UI.tplEventItem +                    
                 '<% } else { %>' +
+                // check if 
+                  UI.tplItemPreview +
                   '<%= item.name %><span class="list-arrow"></span>' +
                 '<% } %>'
             },
@@ -84,7 +90,11 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                     '<% if (data.articleBody) { print(data.articleBody); } %>',
                   onData: function(ui) {
                     var thisEl = app.ui.element('/content/detail/article').htmlEl;
-                    if (ui.data.itemType === 'VideoObject' || ui.data.itemType === 'ImageObject' || ui.data.itemType == 'Article/Status') {
+                    if (ui.data.itemType === 'VideoObject' 
+                        || ui.data.itemType === 'ImageObject' 
+                        || ui.data.itemType === 'Article/Status'
+                        || ui.data.itemType === 'Event'
+                      ) {
                       $(thisEl).hide();
                     }
                     else {
@@ -101,7 +111,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                   loadingTemplate: '<div class="loading"></div>',
                   innerTemplate: UI.tplTweetPage,
                   onData: function(ui) {
-                    var thisEl = app.ui.element('/content/detail/image').htmlEl;
+                    var thisEl = app.ui.element('/content/detail/twitter').htmlEl;
                     if (ui.data.itemType === 'Article/Status') {
                       $(thisEl).show();
                     } else {
@@ -125,7 +135,24 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                       $(thisEl).hide();
                     }
                   }
-                },  
+                },
+                {
+                  // Event
+                  id: 'event',
+                  type: Panel,
+                  uiDataMaster: '/content/itemList',
+                  forceDataPathRefresh: true,
+                  loadingTemplate: '<div class="loading"></div>',
+                  innerTemplate: UI.tplEventPage,
+                  onData: function(ui) {
+                    var thisEl = app.ui.element('/content/detail/event').htmlEl;
+                    if (ui.data.itemType === 'Event') {
+                      $(thisEl).show();
+                    } else {
+                      $(thisEl).hide();
+                    }
+                  }
+                },
                 {
                   // Video
                   id: 'video',

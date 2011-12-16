@@ -16,8 +16,8 @@ Joshfire.define(['joshfire/uielements/list', 'joshfire/uielements/panel', 'joshf
                       '<img src="<%= item.author[0].image.contentURL %>" alt="" />' +
                     '<% } %>' +
                     '<p class="user"><span class="name"><%= item.author[0].name %></span>' +
-                    '<% if (item.publisher && (item.publisher.name === "Twitter")) { %>' +
-                      ' <span class="login">@<%= item.author[0].url.replace("http://twitter.com/", "") %></span>' +
+                    '<% if (item.author[0]["foaf:nick"]) { %>' +
+                      ' <span class="login">@<%= item.author[0]["foaf:nick"] %></span>' +
                     '<% } %>' +
                     '</p>' +
                   '<% } %>' +
@@ -32,8 +32,8 @@ Joshfire.define(['joshfire/uielements/list', 'joshfire/uielements/panel', 'joshf
                         '<img src="<%= data.author[0].image.contentURL %>" alt="" />' +
                       '<% } %>' +
                       '<p class="username"><%= data.author[0].name %></p>' +
-                      '<% if (data.publisher && (data.publisher.name === "Twitter")) { %>' +
-                        ' <p class="userlogin">@<%= data.author[0].url.replace("http://twitter.com/", "") %></p>' +
+                      '<% if (data.author[0]["foaf:nick"]) { %>' +
+                        ' <p class="userlogin">@<%= data.author[0]["foaf:nick"] %></p>' +
                       '<% } %>' +
                     '<% } %>' +
                     '</div>' +
@@ -42,6 +42,23 @@ Joshfire.define(['joshfire/uielements/list', 'joshfire/uielements/panel', 'joshf
                       '<p class="date"><%= data.datePublished %></p>' +                  
                     '</div>' +
                   '</div>',                
+
+    tplEventItem : '<div class="event">' +
+                    '<% var d = new Date(item.startDate); %>' + 
+                    '<p class="startDate"><%= d.getHours() %>:<%= d.getMinutes() %></p>' +     
+                    '<p class="content"><%= item.name %></p>' +                 
+                  '</div>',
+
+    tplEventPage : '<div class="event">' +
+                    '<% var d = new Date(data.startDate); %>' + 
+                    '<div class="date">' +
+                      '<p class="startDate"><%= d.getHours() %>:<%= d.getMinutes() %></p>' +  
+                    '</div>' +
+                    '<div class="event-content">' +
+                      '<h2 class="name"><%= data.name %></h2>' +
+                      '<p class="description"><%= data.desctiption %></p>' +
+                    '</div>' +
+                  '</div>',
 
     tplItemPreview :  '<% if (item.image) { %>' +
                         '<div class="preview"><img src="<%= item.image.contentURL %>"></div>' +

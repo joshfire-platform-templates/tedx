@@ -1,6 +1,6 @@
 {
-  "name": "eventtemplate",
-  "version": "0.0.2",
+  "name": "event",
+  "version": "0.0.3",
   "fullName": "Event template",
   "description": "Template designed for events. Use it for conferences, seminars, concerts... It features a unique and slick design and integrates well with your brand logo. Use it to give informations about the event: map, schedule, directory, about page and news. Populate the photo and video gallery with pictures from the event.",
   "keywords": [

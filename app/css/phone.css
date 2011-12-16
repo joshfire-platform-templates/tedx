@@ -89,6 +89,7 @@ ul {
   position: absolute;
   top: 43px; right: 0; bottom: 49px; left: 0;
   overflow: auto;
+  background-color: #fff;
 }
 
 #defaultApp__header__title {

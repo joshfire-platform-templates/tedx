@@ -141,7 +141,8 @@ ul {
 #defaultApp__content__detail .title p {
   margin: 5px 20px;
   font-size: 13px;
-  opacity: 0.7;
+  color: #7c7c7c;
+  font-weight: 200;
 }
 
 #defaultApp__footer {
@@ -188,9 +189,13 @@ ul {
   background-repeat: no-repeat;
 }
 
-#defaultApp__footer li .picto.item-rss,
-#defaultApp__footer li .picto.item-spreadsheets {
+#defaultApp__footer li .picto.item-rss {
   background-image: url('../images/news.png');
+  background-repeat: no-repeat;
+}
+
+#defaultApp__footer li .picto.item-spreadsheets {
+  background-image: url('../images/people.png');
   background-repeat: no-repeat;
 }
 

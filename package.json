@@ -1,17 +1,18 @@
 {
-  "name": "default",
+  "name": "eventtemplate",
   "version": "0.0.2",
-  "fullName": "Base template",
-  "description": "Official base template, supports all the devices compatible with the Factory. Applied by default.",
+  "fullName": "Event template",
+  "description": "Template designed for events. Use it for conferences, seminars, concerts... It features a unique and slick design and integrates well with your brand logo. Use it to give informations about the event: map, schedule, directory, about page and news. Populate the photo and video gallery with pictures from the event.",
   "keywords": [
-     "default",
-     "clean",
-     "simple"
+     "event",
+     "conference",
+     "concert",
+     "seminar"
    ],
   "joshfire": {
     "images": {
-      "small":"marketing/image-small.png",
-      "big":"marketing/image-big.png"
+      "small":"http://i.imgur.com/XF5iy.png",
+      "big":"http://i.imgur.com/xU1Nn.png"
     },
     "devices": [
       {

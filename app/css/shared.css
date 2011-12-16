@@ -143,11 +143,14 @@ li.mainitemlist.list .tweet .user .name {
 }
 
 .aboutpage {
-  background-color: white;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  color: #fff;
+  background-image: url('../images/fond-about.png');
+  background-color: #2d2d2d;
+ 
 }
 
 .aboutpage .appname {
@@ -155,13 +158,23 @@ li.mainitemlist.list .tweet .user .name {
   font-size: 30px;
   margin: 0px 0 0 15px;
   padding-top: 38px;
+
 }
 
 .aboutpage .abouthtml {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 15px;
-  margin: 0px 60px 0 15px;
+  padding: 0px 60px 0 15px;
   font-weight: normal;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 74px;
+  position: absolute;
+  background-image: -webkit-gradient(radial,center center,10,center center,480,from(#aedae5),to(white));
+  background-color: #2d2d2d;
+
+}
 }
 
 .aboutpage .mw-headline {
@@ -171,12 +184,40 @@ li.mainitemlist.list .tweet .user .name {
 }
 
 .aboutpage h2 {
-  margin: 13px 0 0 0;
+  margin: 35px 0 0 0;
+  font-weight: normal;
+  font-size: 20px;
+
 }
 
 .aboutpage a {
-  color: black;
+  color: #cccccc;
 }
+
+
+/* page event */
+
+.event {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px; 
+  padding: 13px 20px 0 20px;
+}
+
+.event .startDate {
+  position: absolute;
+  margin-left: 45px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+
+.event .content {
+  position: absolute;
+}
+
+
+
 
 
 /* grid */
@@ -213,11 +254,13 @@ li.mainitemlist.rows {
   height: 104px;
 }
 
-li.mainitemlist.item-ArticleStatus:nth-child(odd) {
+li.mainitemlist.item-ArticleStatus:nth-child(odd),
+li.mainitemlist.item-Event:nth-child(odd) {
   background: #fff;
 }
 
-li.mainitemlist.item-ArticleStatus:nth-child(even) {
+li.mainitemlist.item-ArticleStatus:nth-child(even),
+li.mainitemlist.item-Event:nth-child(even) {
   background: #f2f2f2;
 }
 

@@ -87,7 +87,7 @@ li.mainitemlist.list .tweet .user .name {
  }
  
 .tweet .tweet-header {
-  background-image: url('../images/fond-twit.png'); 
+  background: url('../images/triangle-twit.png') no-repeat, url('../images/fond-twit.png'); 
   height: 95px;
   top: 0;
   right: 0;
@@ -143,11 +143,14 @@ li.mainitemlist.list .tweet .user .name {
 }
 
 .aboutpage {
-  background-color: white;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  color: #fff;
+  background-image: url('../images/fond-about.png');
+  background-color: #2d2d2d;
+ 
 }
 
 .aboutpage .appname {
@@ -155,13 +158,23 @@ li.mainitemlist.list .tweet .user .name {
   font-size: 30px;
   margin: 0px 0 0 15px;
   padding-top: 38px;
+
 }
 
 .aboutpage .abouthtml {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 15px;
-  margin: 0px 60px 0 15px;
+  padding: 0px 60px 0 15px;
   font-weight: normal;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 74px;
+  position: absolute;
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%), url('../images/fond-about.png');
+  background-color: #2d2d2d;
+
+}
 }
 
 .aboutpage .mw-headline {
@@ -171,12 +184,83 @@ li.mainitemlist.list .tweet .user .name {
 }
 
 .aboutpage h2 {
-  margin: 13px 0 0 0;
+  margin: 35px 0 0 0;
+  font-weight: normal;
+  font-size: 20px;
+
 }
 
 .aboutpage a {
-  color: black;
+  color: #cccccc;
 }
+
+
+/* page event */
+
+.event {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px; 
+  padding: 8px 20px 0 20px;
+}
+
+.event .startDate {
+  position: absolute;
+  margin-left: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+
+.event .content {
+  position: absolute;
+  padding: 0 12px 0 60px;
+  font-size: 18px;
+  color: #7c7c7c;
+}
+
+
+
+#defaultApp__content__detail__event .event{
+	background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.9)0%,rgba(194,194,194,0.7) 100%), url('../images/fond-calendar.png');
+	position: absolute;
+	bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    
+	
+}
+
+
+#defaultApp__content__detail__event .event .location{
+   position: absolute;
+   padding: 0px 0 0 51px;
+   font-size: 18px;
+   color: #7c7c7c;
+}
+
+#defaultApp__content__detail__event .event .startDate{
+   position: absolute;
+   color: #7c7c7c;
+   margin-left: 0;
+
+}
+
+#defaultApp__content__detail__event .event .name{
+	margin: 60px 0 0 0;
+
+}
+
+
+#defaultApp__content__detail__event .event .description{
+	margin: 5px 0 0 0;
+}
+
+#defaultApp__content__detail__event .event .event-content{
+	margin: 0px 0 0 0;
+}
+
 
 
 /* grid */
@@ -213,11 +297,13 @@ li.mainitemlist.rows {
   height: 104px;
 }
 
-li.mainitemlist.item-ArticleStatus:nth-child(odd) {
+li.mainitemlist.item-ArticleStatus:nth-child(odd),
+li.mainitemlist.item-Event:nth-child(odd) {
   background: #fff;
 }
 
-li.mainitemlist.item-ArticleStatus:nth-child(even) {
+li.mainitemlist.item-ArticleStatus:nth-child(even),
+li.mainitemlist.item-Event:nth-child(even) {
   background: #f2f2f2;
 }
 

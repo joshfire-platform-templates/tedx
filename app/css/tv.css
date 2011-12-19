@@ -275,11 +275,11 @@ display: none;
 
 /*Feed CSS */
 
-.defaultApp__content__itemList_scroller ul li.item-rss{
+.defaultApp__content__itemList_scroller ul li.item-BlogPosting{
 border: 1px solid transparent;
 }
 
-#defaultApp__content__itemList .defaultApp__content__itemList_scroller ul li.item-rss {
+#defaultApp__content__itemList .defaultApp__content__itemList_scroller ul li.item-BlogPosting {
 text-align: left;
 padding: 2%;
 height: 300px;
@@ -289,7 +289,7 @@ height: 300px;
 
 
 
-#defaultApp__content__itemList .defaultApp__content__itemList_scroller ul li.item-rss .preview {
+#defaultApp__content__itemList .defaultApp__content__itemList_scroller ul li.item-BlogPosting .preview {
   
   width: 372px;
   height: 279px;
@@ -299,7 +299,7 @@ height: 300px;
 
 }
 
-#defaultApp__content__itemList .defaultApp__content__itemList_scroller ul li.item-rss .textsummary {
+#defaultApp__content__itemList .defaultApp__content__itemList_scroller ul li.item-BlogPosting .textsummary {
   
   float: left;
   width: 52%;
@@ -310,14 +310,14 @@ height: 300px;
 
 
 
-#defaultApp__content__itemList .defaultApp__content__itemList_scroller ul li.item-rss H3 {
+#defaultApp__content__itemList .defaultApp__content__itemList_scroller ul li.item-BlogPosting H3 {
   margin: 0;
   font-size: 40px;
   line-height: 52px;
   text-shadow: 2px 2px #111;
 }
 
-#defaultApp__content__itemList .defaultApp__content__itemList_scroller ul li.item-rss p {
+#defaultApp__content__itemList .defaultApp__content__itemList_scroller ul li.item-BlogPosting p {
   font-size: 28px;
   line-height: 39px;
   margin: 2% 0;

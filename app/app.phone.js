@@ -82,6 +82,17 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
         prevBtn.show();
       });
 
+      // when the menu is built, create the "more" button
+      footer.subscribe('afterShow', function(event, data) {
+        var $menuitems = $('#defaultApp__footer li');
+        if($menuitems.length > 4) {
+          $($menuitems[2]).after("<li class='more-footer'><div class='picto'></div><div class='name'>more</div></li>");
+        }
+        $('.more-footer').bind('click', function(){
+          $('#defaultApp__footer').toggleClass("opened");
+        }); 
+      });
+
       // Show previous panel now
       prevBtn.subscribe('select', function(event, data) {
         _this.ui.element('/content').switchTo('itemList');

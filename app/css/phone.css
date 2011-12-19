@@ -184,41 +184,36 @@ ul {
   height: 39px;
   margin: auto;
   background-position: center;
-}
-
-#defaultApp__footer li .picto.item-videos {
-  background-image: url('../images/movie.png');
-  background-repeat: no-repeat;
-}
-
-#defaultApp__footer li .picto.item-photos {
-  background-image: url('../images/photos.png');
-  background-repeat: no-repeat;
-}
-
-#defaultApp__footer li .picto.item-rss {
   background-image: url('../images/news.png');
   background-repeat: no-repeat;
 }
 
+#defaultApp__footer li .picto.item-videos {
+  background-image: url('../images/movie.png');
+}
+
+#defaultApp__footer li .picto.item-photos {
+  background-image: url('../images/photos.png');
+}
+
+#defaultApp__footer li .picto.item-rss {
+  background-image: url('../images/news.png');
+}
+
 #defaultApp__footer li .picto.item-spreadsheets {
   background-image: url('../images/people.png');
-  background-repeat: no-repeat;
 }
 
 #defaultApp__footer li .picto.item-ical {
   background-image: url('../images/calendar.png');
-  background-repeat: no-repeat;
 }
 
 #defaultApp__footer li .picto.item-tweets {
   background-image: url('../images/twit.png');
-  background-repeat: no-repeat;
 }
 
 #defaultApp__footer li .picto.item-about{
   background-image: url('../images/about.png');
-  background-repeat: no-repeat;
 }
 
 #defaultApp__footer li .name {

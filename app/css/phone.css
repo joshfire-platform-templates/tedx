@@ -172,15 +172,13 @@ ul {
 
 #defaultApp__footer li {
   display: inline-block;
-  min-width: 50px;
-  max-width: 25%;
   margin: 5px;
 }
 
 
 
 #defaultApp__footer li .picto {
-  width: 76px;
+  width: 52px;
   height: 39px;
   margin: auto;
   background-position: center;

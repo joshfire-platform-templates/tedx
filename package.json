@@ -1,13 +1,11 @@
 {
-  "name": "event",
+  "name": "tedx",
   "version": "0.0.3",
-  "fullName": "Event template",
-  "description": "Template designed for events. Use it for conferences, seminars, concerts... It features a unique and slick design and integrates well with your brand logo. Use it to give informations about the event: map, schedule, directory, about page and news. Populate the photo and video gallery with pictures from the event.",
+  "fullName": "TEDx template",
+  "description": "Create TEDx apps for your TEDx event using this template. The template is designed to fit TEDx brands and colors.",
   "keywords": [
-     "event",
-     "conference",
-     "concert",
-     "seminar"
+     "tedx",
+     "conference"
    ],
   "joshfire": {
     "images": {

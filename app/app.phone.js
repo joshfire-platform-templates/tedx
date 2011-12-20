@@ -1,4 +1,4 @@
-Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tree.ui.phone', 'joshfire/utils/splashscreen', 'joshfire/uielements/panel'], function(BaseApp, Class, Data, UI, Splash, Panel) {
+Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tree.ui.phone', 'joshfire/utils/splashscreen', 'joshfire/uielements/panel', './src/lib/ba-linkify'], function(BaseApp, Class, Data, UI, Splash, Panel, linkify) {
   
   return Class(BaseApp, {
 
@@ -13,6 +13,7 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
           footer = _this.ui.element('/footer'),
           itemList = _this.ui.element('/content/itemList'),
           detailPanel = _this.ui.element('/content/detail'),
+          twitterPanel = _this.ui.element('/content/detail/twitter'),
           prevBtn = _this.ui.element('/header/prev'),
           logo = _this.ui.element('/header/title');
 
@@ -82,11 +83,16 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
         prevBtn.show();
       });
 
+      // linkify the tweets
+      twitterPanel.subscribe('afterRefresh', function(event, data) {
+        $('.linkify').html( linkify( $('.linkify').text() ) );
+      });
+
       // when the menu is built, create the "more" button
       footer.subscribe('afterShow', function(event, data) {
         var $menuitems = $('#defaultApp__footer li');
-        if($menuitems.length > 4) {
-          $($menuitems[2]).after("<li class='more-footer'><div class='picto'></div><div class='name'>more</div></li>");
+        if($menuitems.length > 5) {
+          $($menuitems[3]).after("<li class='more-footer'><div class='picto'></div><div class='name'>more</div></li>");
         }
         $('.more-footer').bind('click', function(){
           $('#defaultApp__footer').toggleClass("opened");

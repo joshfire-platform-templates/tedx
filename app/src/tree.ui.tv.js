@@ -46,11 +46,11 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
               orientation: 'left', // left means a list going down
               loadingTemplate: '<div class="loading"></div>',
               itemTemplate: '<li id="<%=itemHtmlId%>" data-josh-ui-path="<%= path %>" data-josh-grid-id="<%= item.id %>" ' + 
-                              'class="josh-List joshover item-<%= item.itemType %> "' + 
+                              'class="josh-List joshover item-<%= item.itemType.replace("/", "") %> "' + 
                               '><%= itemInner %></li>',
               itemInnerTemplate:
                 '<% if (item.itemType === "Article/Status") { %>' +
-                  '<div class="tweet"><%= item.name %></div>' +
+                  UI.tplTweetItem +
                 '<% } else { %>' +
                   '<div class="preview"><img src="http://placehold.it/200x150" /></div>' + // TODO: replace by item.thumbnail[0].contentURL when we have it
                   '<div class="textsummary">' +

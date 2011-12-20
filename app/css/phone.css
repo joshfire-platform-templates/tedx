@@ -216,6 +216,10 @@ ul {
   background-image: url('../images/about.png');
 }
 
+#defaultApp__footer li.more-footer .picto {
+  background-image: url('../images/point.png');
+}
+
 #defaultApp__footer li .name {
   text-transform: capitalize;
   text-overflow: ellipsis;

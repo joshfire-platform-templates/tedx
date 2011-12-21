@@ -18,8 +18,8 @@ li.mainitemlist.list {
   min-height: 74px;
   line-height: inherit;
   border-bottom: 1px solid #cfcfcf;
-  background-image: url('../images/fond.png');
-  background-size: 100%;  
+  background-image: -webkit-linear-gradient(left, rgba(255,255,255,0.9)0%,rgba(255,255,255,0) 100%), url('../images/fond-video.png');
+   
 }
 
 li.mainitemlist.list .title {
@@ -131,6 +131,10 @@ li.mainitemlist.list .tweet .user .name {
   margin-bottom: 5px;
 }
 
+.detailView .tweet .tweet-content .content a {
+  color: #000000;
+}
+
 .detailView .tweet .tweet-content .date {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -221,7 +225,7 @@ li.mainitemlist.list .tweet .user .name {
 
 
 #defaultApp__content__detail__event .event{
-	background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.9)0%,rgba(194,194,194,0.7) 100%), url('../images/fond-calendar.png');
+	background-image: -webkit-linear-gradient(left, rgba(255,255,255,0.9)0%,rgba(194,194,194,0.7) 100%), url('../images/fond-calendar.png');
 	position: absolute;
 	bottom: 0;
     left: 0;
@@ -234,7 +238,7 @@ li.mainitemlist.list .tweet .user .name {
 
 #defaultApp__content__detail__event .event .location{
    position: absolute;
-   padding: 0px 0 0 43px;
+   padding: 23px 0 0 0;
    font-size: 18px;
    color: #7c7c7c;
 }
@@ -247,7 +251,7 @@ li.mainitemlist.list .tweet .user .name {
 }
 
 #defaultApp__content__detail__event .event .name{
-	margin: 60px 0 0 0;
+	margin: 85px 0 0 0;
 
 }
 
@@ -258,6 +262,13 @@ li.mainitemlist.list .tweet .user .name {
 
 #defaultApp__content__detail__event .event .event-content{
 	margin: 0px 0 0 0;
+}
+
+.endDate {
+	position: absolute;
+	font-size: 18px;
+	color: #7C7C7C;
+	margin: 19px 0 0 56px;
 }
 
 /* annuaire */
@@ -272,6 +283,15 @@ li.mainitemlist.list .tweet .user .name {
 	margin: 0 20px 0 94px;
 	font-size: 15px;
 	color: #7C7C7C;
+}
+
+.defaultApp__content__itemList_scroller {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: -webkit-linear-gradient(left, rgba(255,255,255,0.9)8%,rgba(255,255,255,0) 100%), url('../images/fond-video.png');
 }
 
 
@@ -364,6 +384,7 @@ li.mainitemlist.rows .preview img {
 
 .detailView .directory .picture img {
 	margin: auto;
+	width: 200px;
 }
 
 .detailView .directory .name {
@@ -375,7 +396,40 @@ li.mainitemlist.rows .preview img {
 }
 
 .detailView .directory .content {
-	margin: 15px 0px 0px 20px;
+	margin: 0px 0px 0px 20px;
 }
 
+/* photo */
+
+#defaultApp__content__detail__image {
+	background-color: #171717;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.picture-fullscreen {
+
+	width: 100%;
+}
+
+/* video */
+
+.empty-list {
+	font-size: 20px;
+	color: #000;
+	margin: auto;
+	background-image: -webkit-linear-gradient(left, rgba(255,255,255,0.9)0%,rgba(255,255,255,0) 100%), url('../images/fond-video.png');
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.empty-list p {
+	text-align: center;
+}
 

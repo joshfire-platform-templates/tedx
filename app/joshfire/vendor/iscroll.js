@@ -5,7 +5,6 @@ Joshfire.define([],function() {
    * Released under MIT license, http://cubiq.org/license
    */
 
-  (function(){
   var m = Math,
     vendor = (/webkit/i).test(navigator.appVersion) ? 'webkit' :
       (/firefox/i).test(navigator.userAgent) ? 'Moz' :
@@ -1041,12 +1040,7 @@ Joshfire.define([],function() {
       return !this.moved && !this.zoomed && !this.animating;
     }
   };
-
-  if (typeof exports !== 'undefined') exports.iScroll = iScroll;
-  else window.iScroll = iScroll;
-
-  })();
   
-  return window.iScroll;
+  return iScroll;
   
 });

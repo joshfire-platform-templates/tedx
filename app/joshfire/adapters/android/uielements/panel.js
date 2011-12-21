@@ -9,7 +9,7 @@
  * Date: Wed Jul 20 20:23:43 2011
  */
 
-Joshfire.define(['joshfire/uielement', 'joshfire/class', 'joshfire/vendor/iscroll', 'joshfire/vendor/underscore'], function(UIElement, Class, iScrollPlugin, _) {
+Joshfire.define(['joshfire/uielement', 'joshfire/class', 'joshfire/vendor/iscroll', 'joshfire/vendor/underscore'], function(UIElement, Class, iScroll, _) {
   /**
   * @class Panel Android class
   * @name adapters_android_uielements_panel

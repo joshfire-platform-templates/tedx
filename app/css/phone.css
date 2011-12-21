@@ -124,6 +124,7 @@ ul {
   
   
   z-index: 101;
+  overflow: hidden;  
 }
 
 
@@ -297,4 +298,17 @@ height: 100%;
 #defaultApp__footer li.selected .name {
   color: #1f2222;
   display: none;
+}
+
+.detailViewItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.detailViewItem .directory {
+/*   height: 800px;
+  width: 200px; */
 }

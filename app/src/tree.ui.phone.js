@@ -73,7 +73,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
             {
               id: 'detail',
               type: Panel,
-              scroller: true,
+              // scroller: true,              
               htmlClass: 'detailView',
               loadingTemplate: '<div class="loading"></div>',
               uiDataMaster: '/content/itemList',              
@@ -82,16 +82,20 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                 {
                   // Article and default
                   id: 'article',
+                  htmlClass: 'detailViewItem',
                   type: Panel,
+                  scroller: true, 
                   uiDataMaster: '/content/itemList',
                   forceDataPathRefresh: true,
                   loadingTemplate: '<div class="loading"></div>',
                   innerTemplate:
-                    '<div class="title"><h1><%= data.name %></h1>' +
+                    '<div>' +
+                    '<div class="title"><h1><% if (data && data.name) { print(data.name); } %></h1>' +
                       UI.tplDataAuthor +
                     '</div>' +
                     '<div class="body">'+
                       '<% if (data.articleBody) { print(data.articleBody); } %>' +
+                    '</div>' +
                     '</div>',
                   onData: function(ui) {
                     var thisEl = app.ui.element('/content/detail/article').htmlEl;
@@ -106,14 +110,19 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                     else {
                       $(thisEl).show();
                     }
+                  },
+                  onAfterRefresh : function() {
+                    app.ui.element('/content/detail/article').insertScroller();
                   }
                 },
                 {
                   // Twitter
                   id: 'twitter',
+                  htmlClass: 'detailViewItem',                     
                   type: Panel,
                   uiDataMaster: '/content/itemList',
                   forceDataPathRefresh: true,
+                  scroller: true,                   
                   loadingTemplate: '<div class="loading"></div>',
                   innerTemplate: UI.tplTweetPage,
                   onData: function(ui) {
@@ -123,12 +132,17 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                     } else {
                       $(thisEl).hide();
                     }
+                  },
+                  onAfterRefresh : function() {
+                    app.ui.element('/content/detail/twitter').insertScroller();
                   }
                 },
                 {
                   // Google spreadsheets
                   id: 'google',
+                  htmlClass: 'detailViewItem',                  
                   type: Panel,
+                  scroller: true,                   
                   uiDataMaster: '/content/itemList',
                   forceDataPathRefresh: true,
                   loadingTemplate: '<div class="loading"></div>',
@@ -149,12 +163,17 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                     } else {
                       $(thisEl).hide();
                     }
+                  },
+                  onAfterRefresh : function() {
+                    app.ui.element('/content/detail/google').insertScroller();
                   }
                 },
                 {
                   // Flickr
                   id: 'image',
                   type: Panel,
+                  htmlClass: 'detailViewItem',                     
+                  scroller: true,                   
                   uiDataMaster: '/content/itemList',
                   forceDataPathRefresh: true,
                   loadingTemplate: '<div class="loading"></div>',
@@ -166,12 +185,17 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                     } else {
                       $(thisEl).hide();
                     }
+                  },
+                  onAfterRefresh : function() {
+                    app.ui.element('/content/detail/image').insertScroller();
                   }
                 },
                 {
                   // Event
                   id: 'event',
                   type: Panel,
+                  htmlClass: 'detailViewItem',                     
+                  scroller: true,                   
                   uiDataMaster: '/content/itemList',
                   forceDataPathRefresh: true,
                   loadingTemplate: '<div class="loading"></div>',
@@ -183,12 +207,17 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                     } else {
                       $(thisEl).hide();
                     }
+                  },
+                  onAfterRefresh : function() {
+                    app.ui.element('/content/detail/event').insertScroller();
                   }
                 },
                 {
                   // Video
                   id: 'video',
                   type: Panel,
+                  htmlClass: 'detailViewItem',                     
+                  scroller: true,                   
                   forceDataPathRefresh: true,
                   loadingTemplate: '<div class="loading"></div>',
                   uiDataMaster: '/content/itemList',
@@ -206,6 +235,9 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                     else {
                       $(thisEl).hide();
                     }
+                  },
+                  onAfterRefresh : function() {
+                    app.ui.element('/content/detail/video').insertScroller();
                   },
                   children: [
                     {
@@ -230,10 +262,15 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
             },
             {
               id: 'about',
+              scroller: true,               
               type: Panel,
+              htmlClass: 'detailViewItem',   
               loadingTemplate: '<div class="loading"></div>',          
               autoShow: false,
-              innerTemplate: UI.tplAboutPage
+              innerTemplate: UI.tplAboutPage,
+              onAfterRefresh : function() {
+                app.ui.element('/content/detail/video').insertScroller();
+              }
             }
           ]
         },

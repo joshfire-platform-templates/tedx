@@ -36,11 +36,11 @@ Joshfire.define(['joshfire/input', 'joshfire/class', 'joshfire/vendor/zepto'], f
       
       // The case !hasTouchEvent() helps for browser testing only.
       
-      $(window).live(hasTouchEvent() ? 'touchstart click tap MozTouchDown' : 'mousedown click', function(e) {
+      $(window).live(hasTouchEvent() ? 'touchstart click MozTouchDown' : 'mousedown click', function(e) {
         for (var target = this; target && target != document; target = target.parentNode) {
           if ($(target).attr('data-josh-ui-path')) {
             var elt = self.app.ui.element($(target).attr('data-josh-ui-path'));
-            if ((!elt.hasScroller && e.type!="click" /* && e.type!='touchstart'*/) || (e.type=="click" /*&& elt.hasScroller*/)) {
+            if ((!elt.hasScroller && e.type!="click" /* && e.type!='touchstart'*/) || (e.type=="click" && elt.hasScroller)) {
              elt.publish('input', ['enter', $(target).attr('data-josh-grid-id'), this], true);
             }
             break;

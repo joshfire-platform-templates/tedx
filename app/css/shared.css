@@ -81,25 +81,19 @@ li.mainitemlist.list .tweet img {
  
 }
 
+li.mainitemlist.list .tweet .user{
+  margin-bottom: 0px;
+ }
+
 li.mainitemlist.list .tweet .user .name {
+  display: none;
+ }
+
+li.mainitemlist.list .tweet .user .login {
   margin-left: 73px;
   font-size: 15px;
   font-weight: 700;
- }
- 
- .user{
-  margin-bottom: 0px;
- }
- 
- 
- li.mainitemlist.list .tweet .user .login {
- display: inline-block;
- white-space: nowrap;
- width: 100px;
- text-overflow: ellipsis;
- overflow: hidden;
- }
- 
+ } 
  
  
  li.mainitemlist.list .tweet .content {

@@ -159,7 +159,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                   uiDataMaster: '/content/itemList',
                   forceDataPathRefresh: true,
                   loadingTemplate: '<div class="loading"></div>',
-                  innerTemplate: '<img src="<%= data.contentURL %>" alt="" />',
+                  innerTemplate: '<img class="picture-fullscreen" src="<%= data.contentURL %>" alt="" />',
                   onData: function(ui) {
                     var thisEl = app.ui.element('/content/detail/image').htmlEl;
                     if (ui.data.itemType === 'ImageObject') {

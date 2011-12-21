@@ -11,8 +11,10 @@ body {
   color: #272727;
 }
 
+a {
+color: black;
 
-
+}
 
 ul {
   padding: 0;
@@ -129,8 +131,14 @@ background-image: -webkit-gradient(
 #defaultApp__content__detail {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
-  background: #fff;
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0.9)8%,rgba(255,255,255,0) 100%), url('../images/fond-video.png');
+  background: -webkit-gradient( linear, left top, right top, color-stop(0.0, rgba(255,255,255,0.9)), color-stop(1.0, rgba(225,225,225,0)) ), url('../images/fond-video.png');
+  
+  
+  
+  
   z-index: 101;
+  overflow: hidden;  
 }
 
 
@@ -144,7 +152,7 @@ background-image: -webkit-gradient(
   bottom: 0;
   left: 0;
   right: 0;
-  top: 279px;
+  top: 246px;
 }
 
 #defaultApp__content__detail .title h1 {
@@ -154,7 +162,7 @@ background-image: -webkit-gradient(
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 17px;
 
-  margin: 20px 20px 0 20px; 
+  margin: 0px 20px 0 20px; 
 
 }
 
@@ -186,14 +194,24 @@ height: 100%;
 /*article*/
 
 #defaultApp__content__detail  .josh-id-content_detail_article .title {
-background: red;
+background: transparent;
+position: initial;
 }
 
-
-
 .josh-id-content_detail_article .title h1{
-color:blue;
+line-height: 22px;
+color: #000;
+}
 
+#defaultApp__content__detail  .josh-id-content_detail_article .body {
+background: rgba(255,255,255,0.8);
+padding: 15px;
+border: 1px solid #CFCFCF;
+margin: 20px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+box-shadow: 0 1px rgba(255,255,255,0.7), inset 0 1px rgba(0,0,0,0.2);
 }
 
 
@@ -205,8 +223,13 @@ height: 100%;
 }
 
 
-/*  */ 
+/*  twitter */ 
 
+.josh-id-content_detail_twitter{
+
+background: #FFF;
+height: 100%;
+}
 
 
 #defaultApp__footer.opened {
@@ -296,8 +319,20 @@ height: 100%;
   display: none;
 }
 
-
 .josh-id-content_detail_article{
   line-height: 24px;
   padding: 10px 20px;
+}
+
+.detailViewItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.detailViewItem .directory {
+/*   height: 800px;
+  width: 200px; */
 }

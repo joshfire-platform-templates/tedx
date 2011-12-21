@@ -75,7 +75,7 @@ Joshfire.define(['joshfire/uielements/list', 'joshfire/uielements/panel', 'joshf
                           '<div class="thumbnail" style="background-image:url(\'<%=item.image.contentURL%>\')"></div>' +
                         '<% } %>',
     
-    tplDataAuthor:  '<% if (data.author && data.author[0]) { %>' +
+    tplDataAuthor:  '<% if (data.author && data.author[0] && data.author[0].name) { %>' +
                       '<p class="author">By <strong><%= data.author[0].name %></strong></p>' +
                     '<% } %>',
 

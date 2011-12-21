@@ -63,14 +63,14 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                   UI.tplEventItem +   
                 '<% } else if (item.itemType === "Article" && item.url && item.url.indexOf("spreadsheets.google.com") != -1) { %>' +
                   '<div class="directory">' +
-                    UI.tplItemPreview +
+                    UI.tplItemThumbnail +
                     '<p class="name"><%= item.name %></p>' + 
                     '<p class="description"><%= item.description %></p>' + 
                     '<span class="list-arrow"></span>' +
                   '</div>' +
                 '<% } else { %>' +
                 // check if 
-                  UI.tplItemPreview +
+                  UI.tplItemThumbnail +
                   '<%= item.name %><span class="list-arrow"></span>' +
                 '<% } %>'
             },

@@ -43,9 +43,17 @@ li.mainitemlist.list .abstract {
 li.mainitemlist.list .preview {
   position: absolute;
 }
+
 li.mainitemlist.list .preview img {
   height: 74px;
   width: 74px;
+}
+
+li.mainitemlist .thumbnail {
+  float: left;
+  width: 74px;
+  height: 74px;
+  background-size: cover;
 }
 
 li.mainitemlist.list .tweet {
@@ -293,7 +301,6 @@ li.mainitemlist.list .tweet .user .name {
 	bottom: 0;
 	background-image: -webkit-linear-gradient(left, rgba(255,255,255,0.9)8%,rgba(255,255,255,0) 100%), url('../images/fond-video.png');
 }
-
 
 /* grid */
 

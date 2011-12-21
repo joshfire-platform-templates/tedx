@@ -347,3 +347,35 @@ li.mainitemlist.rows .preview {
 li.mainitemlist.rows .preview img {
 /*  max-height: 40px;*/
 }
+
+.detailView .directory {
+	background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.9)0%,rgba(194,194,194,0.7) 100%), url('../images/fond-calendar.png');
+	position: absolute;
+	bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.detailView .directory .picture {
+	background-image: url('../images/fond-noir.png');
+	padding: 20px;
+}
+
+.detailView .directory .picture img {
+	margin: auto;
+}
+
+.detailView .directory .name {
+	margin: 0px 0px 0px 20px;
+}
+
+.detailView .directory .description {
+	margin: 0px 0px 0px 20px;
+}
+
+.detailView .directory .content {
+	margin: 15px 0px 0px 20px;
+}
+
+

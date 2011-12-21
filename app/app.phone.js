@@ -84,6 +84,10 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
         if($items.length == 0) {
           $('#defaultApp__content__itemList').html(UItpl.tplNothingToSeeHere);
         }
+
+        if( $('#defaultApp__content__itemList li.grid').length > 0 ) {
+           $('#defaultApp__content__itemList ul').append('<li style="clear:both;"></li>');
+        }
       });
 
       // Show prev button when viewing details

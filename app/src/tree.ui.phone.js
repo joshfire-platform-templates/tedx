@@ -32,7 +32,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
           children: [
             {
               id: 'itemList',
-              //scroller: false, // do not use iScroll it's crappy crap (and doesn't work with a grid made of floats)
+              scroller: true,
               type: List,
               htmlClass: 'abs100',
               loadingTemplate: '<div class="loading"></div>',
@@ -50,12 +50,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                             "<%= itemInner %>" + 
                             "</li>",
               itemInnerTemplate:
-                '<% if (item.itemType === "VideoObject") { %>' +
-                  '<div class="title"><%= item.name %></div>' +
-                  UI.getItemDescriptionTemplate(70) +
-                  UI.tplItemPreview +
-                  '<span class="list-arrow"></span>' +
-                '<% } else if (item.itemType === "ImageObject") { %>' +
+                '<% if (item.itemType === "ImageObject") { %>' +
                   UI.tplItemThumbnail +
                 '<% } else if (item.itemType === "Article/Status") { %>' +
                   UI.tplTweetItem +
@@ -69,14 +64,16 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                     '<span class="list-arrow"></span>' +
                   '</div>' +
                 '<% } else { %>' +
-                // check if 
-                  UI.tplItemThumbnail +
-                  '<%= item.name %><span class="list-arrow"></span>' +
+                  '<div class="title"><%= item.name %></div>' +
+                  UI.getItemDescriptionTemplate(70) +
+                  UI.tplItemPreview +
+                  '<span class="list-arrow"></span>' +
                 '<% } %>'
             },
             {
               id: 'detail',
               type: Panel,
+              scroller: true,
               htmlClass: 'detailView',
               loadingTemplate: '<div class="loading"></div>',
               uiDataMaster: '/content/itemList',              
@@ -93,7 +90,9 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                     '<div class="title"><h1><%= data.name %></h1>' +
                       UI.tplDataAuthor +
                     '</div>' +
-                    '<% if (data.articleBody) { print(data.articleBody); } %>',
+                    '<div class="body">'+
+                      '<% if (data.articleBody) { print(data.articleBody); } %>' +
+                    '</div>',
                   onData: function(ui) {
                     var thisEl = app.ui.element('/content/detail/article').htmlEl;
                     if (ui.data.itemType === 'VideoObject' 

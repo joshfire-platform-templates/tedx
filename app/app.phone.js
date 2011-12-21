@@ -96,7 +96,12 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
 
       // linkify the tweets
       twitterPanel.subscribe('afterRefresh', function(event, data) {
-        $('.linkify').html( linkify( $('.linkify').text() ) );
+        var cb = function( text, href ) {
+          return href ? '<a href="' + href + '" title="' + href + '" rel="external" target="_blank">' + text + '<\/a>' : text;
+        }
+
+        $('.linkify').html( linkify( $('.linkify').text(), {callback: cb} ) );
+
       });
 
       // when the menu is built, create the "more" button

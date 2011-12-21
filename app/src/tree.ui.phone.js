@@ -32,7 +32,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
           children: [
             {
               id: 'itemList',
-              //scroller: false, // do not use iScroll it's crappy crap (and doesn't work with a grid made of floats)
+              scroller: true,
               type: List,
               htmlClass: 'abs100',
               loadingTemplate: '<div class="loading"></div>',
@@ -77,6 +77,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
             {
               id: 'detail',
               type: Panel,
+              scroller: true,
               htmlClass: 'detailView',
               loadingTemplate: '<div class="loading"></div>',
               uiDataMaster: '/content/itemList',              

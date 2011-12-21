@@ -22,7 +22,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.data', 'joshfire/vendor/unders
 
       // add a last fake datasource for the About page 
       if(Joshfire.factory.config.template.options && Joshfire.factory.config.template.options.abouthtml) {
-        datasourceArray.splice(datasourceArray.length, 0, {
+        datasourceArray.splice(1, 0, {
                 id: "about",
                 config : {
                   col : "about"

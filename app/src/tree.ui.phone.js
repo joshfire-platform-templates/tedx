@@ -19,9 +19,9 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
               autoShow: false
             },
             {
-              id: 'title', // the title or the logo
+              id: 'title', // only the title, no logo
               type: Panel,
-              innerTemplate: UI.tplHeader
+              innerTemplate: '<%= Joshfire.factory.config.app.name %>'
             }
           ]
         },
@@ -77,6 +77,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
             {
               id: 'detail',
               type: Panel,
+              htmlClass: 'detailView',
               loadingTemplate: '<div class="loading"></div>',
               uiDataMaster: '/content/itemList',              
               autoShow: false,
@@ -158,7 +159,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                   uiDataMaster: '/content/itemList',
                   forceDataPathRefresh: true,
                   loadingTemplate: '<div class="loading"></div>',
-                  innerTemplate: '<img src="<%= data.contentURL %>" alt="" />',
+                  innerTemplate: '<img class="picture-fullscreen" src="<%= data.contentURL %>" alt="" />',
                   onData: function(ui) {
                     var thisEl = app.ui.element('/content/detail/image').htmlEl;
                     if (ui.data.itemType === 'ImageObject') {

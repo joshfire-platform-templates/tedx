@@ -116,6 +116,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
         {
           id: 'detail',
           type: Panel,
+          htmlClass: 'detailView',          
           noMouseAutoFocus: true,
           moveOnFocus: true,
           loadingTemplate: '<div class="loading"></div>',

@@ -85,7 +85,7 @@ li.mainitemlist.list .tweet .user .name {
   margin-top: 6px;
  }
  
-.tweet .tweet-header {
+.detailView .tweet .tweet-header {
   background: url('../images/triangle-twit.png') no-repeat, url('../images/fond-twit.png'); 
   height: 95px;
   top: 0;
@@ -96,7 +96,7 @@ li.mainitemlist.list .tweet .user .name {
  
 }
 
-.tweet .tweet-header .username {
+.detailView .tweet .tweet-header .username {
   color: #fff;
   margin: 0 95px;
   padding-top: 20px;
@@ -106,7 +106,7 @@ li.mainitemlist.list .tweet .user .name {
 
 }
 
-.tweet .tweet-header .userlogin {
+.detailView .tweet .tweet-header .userlogin {
   color: #fff;
   margin: 0 95px;
   padding-top: 1px;
@@ -115,14 +115,14 @@ li.mainitemlist.list .tweet .user .name {
   font-weight: 200;
 }
 
-.tweet .tweet-header img {
+.detailView .tweet .tweet-header img {
    height: 59px;
    margin: 15px;
    position: absolute;
  
 }
 
-.tweet .tweet-content .content {
+.detailView .tweet .tweet-content .content {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: normal;
@@ -131,7 +131,7 @@ li.mainitemlist.list .tweet .user .name {
   margin-bottom: 5px;
 }
 
-.tweet .tweet-content .date {
+.detailView .tweet .tweet-content .date {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: normal;
@@ -349,3 +349,35 @@ li.mainitemlist.rows .preview {
 li.mainitemlist.rows .preview img {
 /*  max-height: 40px;*/
 }
+
+.detailView .directory {
+	background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.9)0%,rgba(194,194,194,0.7) 100%), url('../images/fond-calendar.png');
+	position: absolute;
+	bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.detailView .directory .picture {
+	background-image: url('../images/fond-noir.png');
+	padding: 20px;
+}
+
+.detailView .directory .picture img {
+	margin: auto;
+}
+
+.detailView .directory .name {
+	margin: 0px 0px 0px 20px;
+}
+
+.detailView .directory .description {
+	margin: 0px 0px 0px 20px;
+}
+
+.detailView .directory .content {
+	margin: 15px 0px 0px 20px;
+}
+
+

@@ -1,4 +1,4 @@
-Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tree.ui.phone', 'joshfire/utils/splashscreen', 'joshfire/uielements/panel', './src/lib/ba-linkify'], function(BaseApp, Class, Data, UI, Splash, Panel, linkify) {
+Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tree.ui.phone', 'joshfire/utils/splashscreen', 'joshfire/uielements/panel', './src/lib/ba-linkify', 'src/ui-components'], function(BaseApp, Class, Data, UI, Splash, Panel, linkify, UItpl) {
   
   return Class(BaseApp, {
 
@@ -76,6 +76,14 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
         //   _this.ui.element('/content/detail/video/title').setDataPath(dataPath);                                          
         // }
 
+      });
+
+      // if no item is displayed, display a message
+      itemList.subscribe('afterRefresh', function(event, data) {
+        var $items = $('#defaultApp__content__itemList li');
+        if($items.length == 0) {
+          $('#defaultApp__content__itemList').html(UItpl.tplNothingToSeeHere);
+        }
       });
 
       // Show prev button when viewing details

@@ -50,12 +50,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                             "<%= itemInner %>" + 
                             "</li>",
               itemInnerTemplate:
-                '<% if (item.itemType === "VideoObject") { %>' +
-                  '<div class="title"><%= item.name %></div>' +
-                  UI.getItemDescriptionTemplate(70) +
-                  UI.tplItemPreview +
-                  '<span class="list-arrow"></span>' +
-                '<% } else if (item.itemType === "ImageObject") { %>' +
+                '<% if (item.itemType === "ImageObject") { %>' +
                   UI.tplItemThumbnail +
                 '<% } else if (item.itemType === "Article/Status") { %>' +
                   UI.tplTweetItem +
@@ -69,9 +64,10 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                     '<span class="list-arrow"></span>' +
                   '</div>' +
                 '<% } else { %>' +
-                // check if 
-                  UI.tplItemThumbnail +
-                  '<%= item.name %><span class="list-arrow"></span>' +
+                  '<div class="title"><%= item.name %></div>' +
+                  UI.getItemDescriptionTemplate(70) +
+                  UI.tplItemPreview +
+                  '<span class="list-arrow"></span>' +
                 '<% } %>'
             },
             {

@@ -58,7 +58,6 @@ li.mainitemlist.list .preview {
 
 li.mainitemlist.list .preview img {
   height: 74px;
-  width: 74px;
 }
 
 li.mainitemlist .thumbnail {
@@ -90,6 +89,17 @@ li.mainitemlist.list .tweet .user .name {
  .user{
   margin-bottom: 0px;
  }
+ 
+ 
+ li.mainitemlist.list .tweet .user .login {
+ display: inline-block;
+ white-space: nowrap;
+ width: 100px;
+ text-overflow: ellipsis;
+ overflow: hidden;
+ }
+ 
+ 
  
  li.mainitemlist.list .tweet .content {
   margin-left: 73px;
@@ -435,6 +445,7 @@ color-stop(1.0, rgba(194,194,194,0.7))
 .detailView .directory .picture {
 	background-image: url('../images/fond-noir.png');
 	padding: 20px;
+	text-align: center;
 }
 
 .detailView .directory .picture img {

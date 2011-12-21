@@ -90,7 +90,9 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                     '<div class="title"><h1><%= data.name %></h1>' +
                       UI.tplDataAuthor +
                     '</div>' +
-                    '<% if (data.articleBody) { print(data.articleBody); } %>',
+                    '<div class="body">'+
+                      '<% if (data.articleBody) { print(data.articleBody); } %>' +
+                    '</div>',
                   onData: function(ui) {
                     var thisEl = app.ui.element('/content/detail/article').htmlEl;
                     if (ui.data.itemType === 'VideoObject' 

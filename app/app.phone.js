@@ -38,7 +38,6 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
 
         // if about page
         if(datasourceId == 'about') {
-          console.log("about");
           _this.ui.element('/content/about').show();
           return;
         }

@@ -58,13 +58,23 @@ ul {
 .header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   border-top:1px solid rgba(255, 255, 255, 0.5);
-  background-image: -webkit-linear-gradient(bottom, rgb(178,30,4) 0%, rgb(235,41,6) 50%, rgb(255,43,6) 52%, rgb(253,95,67) 96%);
 
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
+  
+
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, rgb(178,30,4)),
+	color-stop(0.5, rgb(235,41,6)),
+	color-stop(0.52, rgb(255,43,6)),
+	color-stop(0.96, rgb(252,96,68))
+  );
+   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   height: 43px;
-  /*
-  background-image:url('../images/header.png')
-  */
+
   
 }
 

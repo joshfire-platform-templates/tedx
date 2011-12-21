@@ -133,6 +133,9 @@ background-image: -webkit-gradient(
   z-index: 101;
 }
 
+
+
+/* generic*/
 #defaultApp__content__detail .title {
   background: #202020;
   color: #FF2B06;
@@ -150,8 +153,8 @@ background-image: -webkit-gradient(
   font-weight: 400;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 17px;
-  margin-top: 20px;
-  margin-left: 20px;
+
+  margin: 20px 20px 0 20px; 
 
 }
 
@@ -173,6 +176,33 @@ background-image: -webkit-gradient(
   -webkit-transition-property: height;
   -webkit-transition-duration: 0.5s;
 }
+
+
+/*article*/
+
+#defaultApp__content__detail  .josh-id-content_detail_article .title {
+background: red;
+}
+
+
+
+.josh-id-content_detail_article .title h1{
+color:blue;
+
+}
+
+
+/* video */
+
+.josh-id-content_detail_video{
+background: #202020 url('../images/fond-noir.png');
+height: 100%;
+}
+
+
+/*  */ 
+
+
 
 #defaultApp__footer.opened {
   height: 100px;

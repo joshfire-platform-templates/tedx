@@ -41,6 +41,7 @@ li.mainitemlist.list .title {
   float: left;
   margin-top: 21px;
   margin-right: 25px;
+  height: 37px;
 }
 
 li.mainitemlist.list .abstract {
@@ -122,9 +123,13 @@ li.mainitemlist.list .tweet .user .name {
   right: 0;
   bottom: 0;
   left: 0;
- 
- 
 }
+
+.detailView .tweet .tweet-content{
+margin: 20px;
+}
+
+
 
 .detailView .tweet .tweet-header .username {
   color: #fff;
@@ -157,7 +162,9 @@ li.mainitemlist.list .tweet .user .name {
   font-size: 15px;
   font-weight: normal;
   font-size: 20px;
+  /*
   margin-left: 15px;
+  */
   margin-bottom: 5px;
 }
 
@@ -171,7 +178,7 @@ li.mainitemlist.list .tweet .user .name {
   font-weight: normal;
   color: #c3c1c1;
   font-size: 20px;
-  margin-left: 15px;
+ 
   margin-top: 5px;
 }
 
@@ -462,7 +469,7 @@ color-stop(1.0, rgba(194,194,194,0.7))
 }
 
 .detailView .directory .content {
-	margin: 0px 0px 0px 20px;
+	margin: 15px 20px 0px 20px;
 }
 
 /* photo */

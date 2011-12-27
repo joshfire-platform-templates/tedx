@@ -31,7 +31,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
             UIFragments.about(app, "/content")
           ]
         },
-        UIFragments.menu( {id:'footer'} )
+        UIFragments.menu('footer')
       ];
     }
 

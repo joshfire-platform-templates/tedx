@@ -18,11 +18,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
               label: 'Prev',
               autoShow: false
             },
-            {
-              id: 'title', // only the title, no logo
-              type: Panel,
-              innerTemplate: '<%= Joshfire.factory.config.app.name %>'
-            }
+            UIFragments.title()
           ]
         },
         {
@@ -35,13 +31,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
             UIFragments.about(app, "/content")
           ]
         },
-        {
-          id: 'footer',
-          type: List,
-          dataPath: '/datasourcelist/',
-          itemInnerTemplate: '<div class="picto item-<%= item.config.col %>"></div><div class="name"><%= item.name %></div>',
-          onData: function(data) {} // trigger data, WTF?
-        }
+        UIFragments.menu('id')
       ];
     }
 

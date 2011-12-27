@@ -1,4 +1,4 @@
-Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tree.ui.tablet', 'joshfire/utils/splashscreen', 'joshfire/uielements/panel'], function(BaseApp, Class, Data, UI, Splash, Panel) {
+Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tree.ui.tablet', 'joshfire/utils/splashscreen', 'joshfire/uielements/panel', 'src/ui-components'], function(BaseApp, Class, Data, UI, Splash, Panel, UItpl) {
 
   return Class(BaseApp, {
 
@@ -34,6 +34,12 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
       menu.subscribe('select', function(event, data) {
         var datasourceId = data[0][0];
 
+        // if about page
+        if(datasourceId == 'about') {
+          _this.ui.element('/content/about').show();
+          return;
+        }
+
         // Set the new dataPath
         _this.ui.element('/content/itemList').setDataPath('/datasource/' + datasourceId + '/');
 
@@ -53,7 +59,14 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
 
       // Todo: find better event to select first item
       itemList.subscribe('afterRefresh', function(event, data) {
-        // itemList.selectByIndex(0);
+        var $items = $('#defaultApp__content__itemList li');
+        if($items.length == 0) {
+          $('#defaultApp__content__itemList').html(UItpl.tplNothingToSeeHere);
+        }
+
+        if( $('#defaultApp__content__itemList li.grid').length > 0 ) {
+           $('#defaultApp__content__itemList ul').append('<li style="clear:both;"></li>');
+        }
       });
 
       callback(null, true);

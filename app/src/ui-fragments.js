@@ -46,6 +46,25 @@ return {
     };
   },
 
+  title : function() {
+    return {
+            id: 'title', // only the title, no logo
+            type: Panel,
+            innerTemplate: '<%= Joshfire.factory.config.app.name %>'
+          };
+  },
+
+  menu : function(id) {
+    return {
+          id: id || 'menu',
+          type: List,
+          htmlClass: 'menu',
+          dataPath: '/datasourcelist/',
+          itemInnerTemplate: '<div class="picto item-<%= item.config.col %>"></div><div class="name"><%= item.name %></div>',
+          onData: function(data) {} // trigger data, WTF?
+        };
+  },
+
   /**
    * @param app : a reference to the current application (in a UITree class, this.app)
    * @param treePosition : (optional) the string depresenting the position of the instanciated fragment in the tree. (need more work on this) 

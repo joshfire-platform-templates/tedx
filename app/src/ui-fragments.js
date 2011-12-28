@@ -3,7 +3,18 @@
  */
 Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list', 'joshfire/uielements/panel', 'joshfire/uielements/panel.manager', 'joshfire/uielements/button', 'src/ui-components'], function(Class, UITree, List, Panel, PanelManager, Button, UI, UIFragments) {
 return {
-  itemList : function() {
+  /**
+   * @param toGrid : list of object type for wich to dispkay content as grid
+   */
+  itemList : function(params) {
+    params = params || {};
+    params.toGrid = params.toGrid || ['ImageObject'];
+    
+    var gridIf = "item.itemType === '" + params.toGrid[0] + "'";
+    for (var i = 1; i < params.toGrid.length; i ++) {
+      gridIf += " || item.itemType === '" + params.toGrid[i] + "'";
+    }
+
     return {
       id: 'itemList',
       scroller: true,
@@ -14,7 +25,7 @@ return {
                     "data-josh-ui-path='<%= path %>' data-josh-grid-id='<%= item.id %>'" + 
                     "class='josh-List joshover item-<%= item.itemType.replace('/', '') %> mainitemlist " + 
                     // grid view
-                    "<% if (item.itemType === 'ImageObject') { %>" +
+                    "<% if (" + gridIf + ") { %>" +
                       " grid" +
                     "<% } else { %>" +
                     // list view
@@ -54,9 +65,11 @@ return {
           };
   },
 
-  menu : function(id) {
+  menu : function(params) {
+    params = params || {id: 'menu'};
+
     return {
-          id: id || 'menu',
+          id: params.id,
           type: List,
           htmlClass: 'menu',
           dataPath: '/datasourcelist/',
@@ -68,15 +81,17 @@ return {
   /**
    * @param app : a reference to the current application (in a UITree class, this.app)
    * @param treePosition : (optional) the string depresenting the position of the instanciated fragment in the tree. (need more work on this) 
+   * uiDataMaster
    */
-  detail : function(app, treePosition, uiDataMaster) {
+  detail : function(params) {
+
     return {
       id: 'detail',
       type: Panel,
       // scroller: true,              
       htmlClass: 'detailView',
       loadingTemplate: '<div class="loading"></div>',
-      uiDataMaster: uiDataMaster,        
+      uiDataMaster: params.uiDataMaster,        
       autoShow: false,
       children: [
         {
@@ -85,7 +100,7 @@ return {
           htmlClass: 'detailViewItem',
           type: Panel,
           scroller: true, 
-          uiDataMaster: uiDataMaster,
+          uiDataMaster: params.uiDataMaster,
           forceDataPathRefresh: true,
           loadingTemplate: '<div class="loading"></div>',
           innerTemplate:
@@ -98,7 +113,7 @@ return {
             '</div>' +
             '</div>',
           onData: function(ui) {
-            var thisEl = app.ui.element(treePosition + '/detail/article').htmlEl;
+            var thisEl = params.app.ui.element(params.treePosition + '/detail/article').htmlEl;
             if (ui.data.itemType === 'VideoObject' 
                 || ui.data.itemType === 'ImageObject' 
                 || ui.data.itemType === 'Article/Status'
@@ -112,7 +127,7 @@ return {
             }
           },
           onAfterRefresh : function() {
-            app.ui.element(treePosition + '/detail/article').insertScroller();
+            params.app.ui.element(params.treePosition + '/detail/article').insertScroller();
           }
         },
         {
@@ -120,13 +135,13 @@ return {
           id: 'twitter',
           htmlClass: 'detailViewItem',                     
           type: Panel,
-          uiDataMaster: uiDataMaster,
+          uiDataMaster: params.uiDataMaster,
           forceDataPathRefresh: true,
           scroller: true,                   
           loadingTemplate: '<div class="loading"></div>',
           innerTemplate: UI.tplTweetPage,
           onData: function(ui) {
-            var thisEl = app.ui.element(treePosition + '/detail/twitter').htmlEl;
+            var thisEl = params.app.ui.element(params.treePosition + '/detail/twitter').htmlEl;
             if (ui.data.itemType === 'Article/Status') {
               $(thisEl).show();
             } else {
@@ -134,7 +149,7 @@ return {
             }
           },
           onAfterRefresh : function() {
-            app.ui.element(treePosition + '/detail/twitter').insertScroller();
+            params.app.ui.element(params.treePosition + '/detail/twitter').insertScroller();
           }
         },
         {
@@ -143,7 +158,7 @@ return {
           htmlClass: 'detailViewItem',                  
           type: Panel,
           scroller: true,                   
-          uiDataMaster: uiDataMaster,
+          uiDataMaster: params.uiDataMaster,
           forceDataPathRefresh: true,
           loadingTemplate: '<div class="loading"></div>',
           innerTemplate:  '<div class="directory">' +
@@ -157,7 +172,7 @@ return {
                             '<% } %>' +
                           '</div>',
           onData: function(ui) {
-            var thisEl = app.ui.element(treePosition + '/detail/google').htmlEl;
+            var thisEl = params.app.ui.element(params.treePosition + '/detail/google').htmlEl;
             if (ui.data.itemType === 'Article' && ui.data.url && ui.data.url.indexOf("spreadsheets.google.com") != -1) {
               $(thisEl).show();
             } else {
@@ -165,7 +180,7 @@ return {
             }
           },
           onAfterRefresh : function() {
-            app.ui.element(treePosition + '/detail/google').insertScroller();
+            params.app.ui.element(params.treePosition + '/detail/google').insertScroller();
           }
         },
         {
@@ -174,12 +189,12 @@ return {
           type: Panel,
           htmlClass: 'detailViewItem',                     
           scroller: true,                   
-          uiDataMaster: uiDataMaster,
+          uiDataMaster: params.uiDataMaster,
           forceDataPathRefresh: true,
           loadingTemplate: '<div class="loading"></div>',
           innerTemplate: '<img class="picture-fullscreen" src="<%= data.contentURL %>" alt="" />',
           onData: function(ui) {
-            var thisEl = app.ui.element(treePosition + '/detail/image').htmlEl;
+            var thisEl = params.app.ui.element(params.treePosition + '/detail/image').htmlEl;
             if (ui.data.itemType === 'ImageObject') {
               $(thisEl).show();
             } else {
@@ -187,7 +202,7 @@ return {
             }
           },
           onAfterRefresh : function() {
-            app.ui.element(treePosition + '/detail/image').insertScroller();
+            params.app.ui.element(params.treePosition + '/detail/image').insertScroller();
           }
         },
         {
@@ -196,12 +211,12 @@ return {
           type: Panel,
           htmlClass: 'detailViewItem',                     
           scroller: true,                   
-          uiDataMaster: uiDataMaster,
+          uiDataMaster: params.uiDataMaster,
           forceDataPathRefresh: true,
           loadingTemplate: '<div class="loading"></div>',
           innerTemplate: UI.tplEventPage,
           onData: function(ui) {
-            var thisEl = app.ui.element(treePosition + '/detail/event').htmlEl;
+            var thisEl = params.app.ui.element(params.treePosition + '/detail/event').htmlEl;
             if (ui.data.itemType === 'Event') {
               $(thisEl).show();
             } else {
@@ -209,7 +224,7 @@ return {
             }
           },
           onAfterRefresh : function() {
-            app.ui.element(treePosition + '/detail/event').insertScroller();
+            params.app.ui.element(params.treePosition + '/detail/event').insertScroller();
           }
         },
         {
@@ -220,10 +235,10 @@ return {
           scroller: true,                   
           forceDataPathRefresh: true,
           loadingTemplate: '<div class="loading"></div>',
-          uiDataMaster: uiDataMaster,
+          uiDataMaster: params.uiDataMaster,
           onData: function(ui) {
-            var thisEl = app.ui.element(treePosition + '/detail/video').htmlEl,
-                player = app.ui.element(treePosition + '/detail/video/player.youtube');
+            var thisEl = params.app.ui.element(params.treePosition + '/detail/video').htmlEl,
+                player = params.app.ui.element(params.treePosition + '/detail/video/player.youtube');
 
             if ((ui.data.itemType === 'VideoObject') && ui.data.publisher && (ui.data.publisher.name === 'Youtube')) {
               player.playWithStaticUrl({
@@ -237,13 +252,13 @@ return {
             }
           },
           onAfterRefresh : function() {
-            app.ui.element(treePosition + '/detail/video').insertScroller();
+            params.app.ui.element(params.treePosition + '/detail/video').insertScroller();
           },
           children: [
             {
               id: 'title',
               type: Panel,
-              uiDataMaster: uiDataMaster,
+              uiDataMaster: params.uiDataMaster,
               innerTemplate:
                 '<div class="title"><h1><%= data.name %></h1>' +
                 UI.tplDataAuthor +

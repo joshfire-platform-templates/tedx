@@ -3,6 +3,41 @@ img.applogo {
   padding-left: 20px;
 }
 
+
+/* MENU LIST */
+/* à voir si ça pete pas iphone template ? auquel cas remettre dans css tablet event*/
+
+.menu li .picto.item-videos {
+  background-image: url('../images/movie.png');
+  }
+
+
+.menu li .picto.item-photos {
+  background-image: url('../images/photos.png');
+}
+
+.menu li .picto.item-spreadsheets {
+  background-image: url('../images/people.png');
+}
+
+.menu li .picto.item-ical {
+  background-image: url('../images/calendar.png');
+}
+
+.menu li .picto.item-tweets {
+  background-image: url('../images/twit.png');
+}
+
+.menu li .picto.item-about{
+  background-image: url('../images/about.png');
+}
+
+.menu li.more-footer .picto {
+  background-image: url('../images/point.png');
+}
+
+
+
 /* ITEM LIST */
 
 li.mainitemlist {
@@ -110,6 +145,8 @@ li.mainitemlist.list .tweet .user .login {
   margin-top: 6px;
  }
  
+ /*
+ 
 .detailView .tweet .tweet-header {
   background: url('../images/triangle-twit.png') no-repeat, url('../images/fond-twit.png'); 
   height: 95px;
@@ -156,9 +193,9 @@ margin: 20px;
   font-size: 15px;
   font-weight: normal;
   font-size: 20px;
-  /*
+ 
   margin-left: 15px;
-  */
+ 
   margin-bottom: 5px;
 }
 
@@ -176,21 +213,11 @@ margin: 20px;
   margin-top: 5px;
 }
 
+*/
+
 .aboutpage {
   color: #fff;
 
-  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%), url('../images/fond-about.png');
-  
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,	
-    color-stop(0.0, rgba(0,0,0,0)),
-    color-stop(1.0, rgba(0,0,0,0.65))
-  ), url('../images/fond-about.png');
-    
-  background-color: #2d2d2d;
- 
 }
 
 img.applogo {

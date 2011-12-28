@@ -214,6 +214,77 @@ height: 100%;
 }
 
 
+.detailView .tweet .tweet-header {
+  background: url('../images/triangle-twit.png') no-repeat, url('../images/fond-twit.png'); 
+  height: 95px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.detailView .tweet .tweet-content{
+margin: 20px;
+}
+
+
+
+.detailView .tweet .tweet-header .username {
+  color: #fff;
+  margin: 0 95px;
+  padding-top: 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+
+}
+
+.detailView .tweet .tweet-header .userlogin {
+  color: #fff;
+  margin: 0 95px;
+  padding-top: 1px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.detailView .tweet .tweet-header img {
+   height: 59px;
+   margin: 15px;
+   position: absolute;
+ 
+}
+
+.detailView .tweet .tweet-content .content {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  font-size: 20px;
+  /*
+  margin-left: 15px;
+  */
+  margin-bottom: 5px;
+}
+
+.detailView .tweet .tweet-content .content a {
+  color: #000000;
+}
+
+.detailView .tweet .tweet-content .date {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  color: #c3c1c1;
+  font-size: 20px;
+ 
+  margin-top: 5px;
+}
+
+
+
+
+/*   */ 
+
 #defaultApp__footer.opened {
   height: 100px;
 }
@@ -313,3 +384,24 @@ height: 100%;
 /*   height: 800px;
   width: 200px; */
 }
+
+/* ABOUT PAGE */
+
+.aboutpage {
+  color: #fff;
+
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%), url('../images/fond-about.png');
+  
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,	
+    color-stop(0.0, rgba(0,0,0,0)),
+    color-stop(1.0, rgba(0,0,0,0.65))
+  ), url('../images/fond-about.png');
+    
+  background-color: #2d2d2d;
+ 
+}
+
+

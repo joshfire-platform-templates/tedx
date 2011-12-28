@@ -171,6 +171,11 @@ ul {
   -webkit-transition-duration: 0.5s;
 }
 
+#defaultApp__footer ul {
+	text-align: right;
+	height: 100%;
+}
+
 
 /*article*/
 
@@ -292,15 +297,9 @@ margin: 20px;
   height: 100%;
 }
 
-.defaultApp__footer_scroller ul {
-  height: 100%;
-  padding-right: 10px;
-}
-
 #defaultApp__footer li {
   display: inline-block;
   margin: 5px;
-  float: right;
 }
 
 

@@ -450,7 +450,7 @@ li.mainitemlist.grid .thumbnail {
   height: 100%;
 }
 
-.detailViewItem {
+.detailViewItem, .about {
   position: absolute;
   top: 0;
   left: 0;

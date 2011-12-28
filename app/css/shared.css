@@ -556,3 +556,6 @@ color-stop(1.0, rgba(255,255,255,0))
 	text-align: center;
 }
 
+.clearfix {
+  clear:both;
+}

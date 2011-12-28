@@ -209,6 +209,13 @@ height: 100%;
 }
 
 
+/* google */
+
+.detailView .directory .picture img {
+	margin: auto;
+	width: 50%;
+}
+
 /*  twitter */ 
 
 .josh-id-content_detail_twitter{
@@ -475,4 +482,11 @@ li.mainitemlist.grid .thumbnail {
  
 }
 
+/* page agenda */
+
+.detailView .directory .picture {
+	background-image: url('../images/fond-noir.png');
+	padding: 20px;
+	text-align: center;
+}
 

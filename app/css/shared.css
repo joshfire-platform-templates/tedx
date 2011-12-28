@@ -497,16 +497,7 @@ li.mainitemlist.rows .preview img {
     ), url('../images/fond-calendar.png');
 }
 
-.detailView .directory .picture {
-	background-image: url('../images/fond-noir.png');
-	padding: 20px;
-	text-align: center;
-}
 
-.detailView .directory .picture img {
-	margin: auto;
-	width: 50%;
-}
 
 .detailView .directory .name {
 	margin: 0px 0px 0px 15px;

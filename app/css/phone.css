@@ -280,7 +280,65 @@ margin: 20px;
   margin-top: 5px;
 }
 
+/* Liste EVENT */
 
+.event {
+ 
+  padding: 8px 20px 0 20px;
+}
+
+.event .startDate {
+
+  margin-left: 5px;
+
+}
+
+.event .content {
+
+  padding: 0 12px 0 60px;
+
+}
+
+.endDate {
+
+	margin: 19px 0 0 56px;
+}
+
+
+
+/* DETAIL EVENT */
+
+
+.detailView .event {
+ 
+  padding: 8px 20px 0 20px;
+}
+
+.detailView .event .startDate {
+
+  margin-left: 5px;
+
+}
+
+.detailView .event .content {
+
+  padding: 0 12px 0 60px;
+
+}
+
+
+
+.detailView .endDate {
+	position: absolute;
+	font-size: 18px;
+	color: #666;
+	font-weight: 300;
+	margin: 19px 0 0 56px;
+}
+
+.detailView .event .location{
+   padding: 23px 0 0 0;
+}
 
 
 /*   */ 

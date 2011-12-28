@@ -10,7 +10,7 @@ body {
   padding-bottom: 40px;
  */
  overflow: hidden;
- background: url(../images/image-bckgd.jpg) no-repeat 0 0;
+ background: #111;
 }
 
 
@@ -269,7 +269,7 @@ background-color: rgba(255,255,255,0.1);
   right: 0;
   left: 0;
   z-index: -1;
-  background: rgba(45,45,45,0.9);
+  background: rgba(45,45,45,1);
 
 );
 
@@ -289,6 +289,31 @@ background-color: rgba(255,255,255,0.1);
 .josh-id-content .josh-id-content_itemList.itemList li{
 
 
+}
+
+
+/* List EVENT  */
+
+li.mainitemlist.list .event {
+  margin: 15px;
+  padding: 0;
+}
+
+li.mainitemlist.list .event .startDate {
+  margin-top: 0;
+  margin-left: 5px;
+
+}
+
+li.mainitemlist.list .event .content {
+
+  padding: 0 12px 0 60px;
+
+}
+
+li.mainitemlist.list .endDate {
+
+	margin: 19px 0 0 56px;
 }
 
 
@@ -388,6 +413,30 @@ color: white;
   font-size: 20px;
   margin-top: 5px;
 }
+
+/* Content detail EVENT CALENDAR ECAL ICAL */
+
+
+.detailView{
+}
+
+.coords{
+}
+
+.detailView .startDate {
+margin-top: 19px;
+}
+
+
+.detailView .endDate {
+
+	margin: 19px 0 0 56px;
+}
+
+.detailView .event .location{
+   padding: 23px 0 0 0;
+}
+
 
 /* ABOUT PAGE */
 

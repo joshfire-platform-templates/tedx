@@ -258,17 +258,17 @@ img.applogo {
 }
 
 
-/* page event */
+/* Liste event */
 
 .event {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 15px; 
-  padding: 8px 20px 0 20px;
+
 }
 
 .event .startDate {
   position: absolute;
-  margin-left: 5px;
+
   font-size: 18px;
   font-weight: 600;
 }
@@ -276,12 +276,19 @@ img.applogo {
 
 
 .event .content {
-  position: absolute;
-  padding: 0 12px 0 60px;
+
   font-size: 18px;
-  color: #7c7c7c;
+  color: #666;
+  font-weight: 300;
 }
 
+.endDate {
+	position: absolute;
+	font-size: 18px;
+	color: #666;
+	font-weight: 300;
+
+}
 
 
 #defaultApp__content__detail__event .event{
@@ -305,19 +312,15 @@ color-stop(1.0, rgba(194,194,194,0.7))
 }
 
 
-#defaultApp__content__detail__event .event .location{
+.detailView .event .location{
    position: absolute;
-   padding: 23px 0 0 0;
+
    font-size: 18px;
-   color: #7c7c7c;
+   color: #666;
+   font-weight: 300;
 }
 
-#defaultApp__content__detail__event .event .startDate{
-   position: absolute;
-   color: #7c7c7c;
-   margin-left: 0;
 
-}
 
 #defaultApp__content__detail__event .event .name{
 	margin: 85px 0 0 0;
@@ -333,12 +336,44 @@ color-stop(1.0, rgba(194,194,194,0.7))
 	margin: 0px 0 0 0;
 }
 
-.endDate {
+
+/* DETAIL EVENT */
+
+
+.detailView .event {
+ 
+  padding: 8px 20px 0 20px;
+}
+
+
+
+}
+
+.detailView .event .startDate {
+  position: absolute;
+  color: #666;
+  margin-left: 0;
+
+}
+
+.detailView .event .content {
+
+  padding: 0 12px 0 60px;
+
+}
+
+
+
+
+
+.detailView .endDate {
 	position: absolute;
 	font-size: 18px;
-	color: #7C7C7C;
-	margin: 19px 0 0 56px;
+	color: #666;
+	font-weight: 300;
+
 }
+
 
 /* annuaire */
 

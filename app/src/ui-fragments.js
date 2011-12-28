@@ -87,8 +87,7 @@ return {
 
     return {
       id: 'detail',
-      type: Panel,
-      // scroller: true,              
+      type: Panel,            
       htmlClass: 'detailView',
       loadingTemplate: '<div class="loading"></div>',
       uiDataMaster: params.uiDataMaster,        
@@ -101,7 +100,6 @@ return {
           type: Panel,
           scroller: true, 
           uiDataMaster: params.uiDataMaster,
-          forceDataPathRefresh: true,
           loadingTemplate: '<div class="loading"></div>',
           innerTemplate:
             '<div>' +
@@ -136,7 +134,6 @@ return {
           htmlClass: 'detailViewItem',                     
           type: Panel,
           uiDataMaster: params.uiDataMaster,
-          forceDataPathRefresh: true,
           scroller: true,                   
           loadingTemplate: '<div class="loading"></div>',
           innerTemplate: UI.tplTweetPage,
@@ -159,7 +156,6 @@ return {
           type: Panel,
           scroller: true,                   
           uiDataMaster: params.uiDataMaster,
-          forceDataPathRefresh: true,
           loadingTemplate: '<div class="loading"></div>',
           innerTemplate:  '<div class="directory">' +
                             '<% if (data.image) { %>' +
@@ -190,7 +186,6 @@ return {
           htmlClass: 'detailViewItem',                     
           scroller: true,                   
           uiDataMaster: params.uiDataMaster,
-          forceDataPathRefresh: true,
           loadingTemplate: '<div class="loading"></div>',
           innerTemplate: '<img class="picture-fullscreen" src="<%= data.contentURL %>" alt="" />',
           onData: function(ui) {
@@ -212,7 +207,6 @@ return {
           htmlClass: 'detailViewItem',                     
           scroller: true,                   
           uiDataMaster: params.uiDataMaster,
-          forceDataPathRefresh: true,
           loadingTemplate: '<div class="loading"></div>',
           innerTemplate: UI.tplEventPage,
           onData: function(ui) {
@@ -233,7 +227,6 @@ return {
           type: Panel,
           htmlClass: 'detailViewItem',                     
           scroller: true,                   
-          forceDataPathRefresh: true,
           loadingTemplate: '<div class="loading"></div>',
           uiDataMaster: params.uiDataMaster,
           onData: function(ui) {

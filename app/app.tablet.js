@@ -65,11 +65,6 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
         _this.ui.element('/content').switchTo('itemList');
       });
 
-      // Refresh content each time new data is attached
-      itemList.subscribe('data', function(event, data) {
-        itemList.refresh();
-      });
-
       // Open item when selected
       itemList.subscribe('select', function(event, data) {
         _this.ui.element('/content/detail').show();
@@ -81,9 +76,10 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
         if($items.length == 0) {
           $('#defaultApp__content__itemList').html(UItpl.tplNothingToSeeHere);
         }
-
         if( $('#defaultApp__content__itemList li.grid').length > 0 ) {
-           $('#defaultApp__content__itemList ul').append('<li style="clear:both;"></li>');
+          if( ! $('#defaultApp__content__itemList ul li').last().hasClass('clearfix') ) {
+            $('#defaultApp__content__itemList ul').append('<li class="clearfix"></li>');
+          }
         }
       });
 

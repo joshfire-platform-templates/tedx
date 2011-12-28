@@ -242,6 +242,7 @@ background-color: rgba(255,255,255,0.1);
   border-right: 1px solid #ddd;
 }
 
+
 .josh-id-content_itemList li {
   border-bottom: 1px solid #ddd;
   padding: 10px;
@@ -407,6 +408,14 @@ li.mainitemlist.list .endDate {
   bottom: 0;
 }
 
+.detailViewItem, .about {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .detailView.fullSize {
   left: 0;
 }
@@ -481,6 +490,39 @@ color: white;
   font-size: 20px;
   margin-top: 5px;
 }
+
+
+/* detail google */
+
+#defaultApp__content__detail__google,
+.detailView .directory {
+	height: 100%;
+}
+
+.detailView .directory .picture img {
+	margin: auto;
+	width: 30%;
+	margin: 9% 0 1% 2%;
+}
+
+.detailView .directory .content {
+	margin: 0% 0% 0% 2%;
+	padding: 0%;
+}
+
+
+.detailView .directory .name{
+position: absolute;
+top: 0;
+}
+
+.detailView .directory .description {
+position: absolute;
+top: 40px;
+}
+
+
+
 
 /* Content detail EVENT CALENDAR ECAL ICAL */
 
@@ -603,3 +645,5 @@ padding: 71px 211px 10px 71px;
   font-size: 30px;
 
 }
+
+/* agenda */

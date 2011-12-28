@@ -148,8 +148,7 @@ ul {
   font-weight: 400;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 17px;
-
-  margin: 0px 20px 0 20px; 
+  margin: 0px 20px 0 15px; 
 
 }
 
@@ -295,11 +294,13 @@ margin: 20px;
 
 .defaultApp__footer_scroller ul {
   height: 100%;
+  padding-right: 10px;
 }
 
 #defaultApp__footer li {
   display: inline-block;
   margin: 5px;
+  float: right;
 }
 
 

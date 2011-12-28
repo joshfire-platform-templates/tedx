@@ -69,6 +69,7 @@ li.mainitemlist.list {
    
 }
 
+/*
 li.mainitemlist.list .title {
 	font-size: 15px;
 	float: left;
@@ -81,6 +82,8 @@ li.mainitemlist.list .title {
 	width: 180px;
 	word-wrap: break-word; 
 }
+*/
+
 
 li.mainitemlist.list .abstract {
   color: #171717;
@@ -313,29 +316,11 @@ color-stop(1.0, rgba(194,194,194,0.7))
 }
 
 
-.detailView .event .location{
-   position: absolute;
-
-   font-size: 18px;
-   color: #666;
-   font-weight: 300;
-}
 
 
 
-#defaultApp__content__detail__event .event .name{
-	margin: 85px 0 0 0;
-
-}
 
 
-#defaultApp__content__detail__event .event .description{
-	margin: 5px 0 0 0;
-}
-
-#defaultApp__content__detail__event .event .event-content{
-	margin: 0px 0 0 0;
-}
 
 
 /* DETAIL EVENT */
@@ -346,7 +331,13 @@ color-stop(1.0, rgba(194,194,194,0.7))
   padding: 8px 20px 0 20px;
 }
 
+.detailView .event .location{
+   position: absolute;
 
+   font-size: 18px;
+   color: #666;
+   font-weight: 300;
+}
 
 }
 
@@ -354,6 +345,14 @@ color-stop(1.0, rgba(194,194,194,0.7))
   position: absolute;
   color: #666;
   margin-left: 0;
+
+}
+
+.detailView .event .endDate {
+	position: absolute;
+	font-size: 18px;
+	color: #666;
+	font-weight: 300;
 
 }
 
@@ -365,15 +364,28 @@ color-stop(1.0, rgba(194,194,194,0.7))
 
 
 
+.detailView .event .event-content{
+	margin: 0px 0 0 0;
+}
 
 
-.detailView .endDate {
-	position: absolute;
-	font-size: 18px;
-	color: #666;
-	font-weight: 300;
+.detailView .event .name{
+	margin-top: 85px;
 
 }
+
+
+.detailView .event .description{
+	margin: 5px 0 0 0;
+}
+
+
+
+
+
+
+
+
 
 
 /* annuaire */

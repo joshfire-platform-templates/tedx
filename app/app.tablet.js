@@ -41,7 +41,25 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
         }
 
         // Set the new dataPath
-        _this.ui.element('/content/itemList').setDataPath('/datasource/' + datasourceId + '/');
+        itemList.setDataPath('/datasource/' + datasourceId + '/');
+
+        // Check if the selected datasource should be displayed fullscreen
+        var dataCol;
+        for(var i=0; i< _this.data.tree['/datasource/'].length; i++ ) {
+          if(_this.data.tree['/datasource/'][i].id == datasourceId) {
+            dataCol = _this.data.tree['/datasource/'][i].col;       
+          }
+        }
+        var fullSizeClass = 'fullSize';
+        if((dataCol == 'photos' || dataCol == 'videos')) {
+          if( !itemList.hasHtmlClass(fullSizeClass) ) {
+            itemList.addHtmlClass(fullSizeClass);
+            detailPanel.addHtmlClass(fullSizeClass);
+          }
+        } else {
+          itemList.removeHtmlClass(fullSizeClass);
+          detailPanel.removeHtmlClass(fullSizeClass);
+        }
 
         // Show itemList, because we could be on a detail panel
         _this.ui.element('/content').switchTo('itemList');

@@ -70,13 +70,16 @@ li.mainitemlist.list {
 }
 
 li.mainitemlist.list .title {
-  font-size: 15px;
-  margin-left: 109px;
-  overflow: hidden;
-  float: left;
-  margin-top: 21px;
-  margin-right: 25px;
-  height: 37px;
+	font-size: 15px;
+	float: left;
+	padding: 15px 30px 0 110px;
+	overflow: hidden;	
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	width: 180px;
+	word-wrap: break-word; 
 }
 
 li.mainitemlist.list .abstract {
@@ -263,20 +266,18 @@ img.applogo {
 .event {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 15px; 
-
 }
 
 .event .startDate {
   position: absolute;
-
   font-size: 18px;
   font-weight: 600;
+  margin-top: 7px;
 }
 
 
 
 .event .content {
-
   font-size: 18px;
   color: #666;
   font-weight: 300;
@@ -381,12 +382,21 @@ color-stop(1.0, rgba(194,194,194,0.7))
 	margin: 0 20px 0 94px;
 	padding-top: 16px;
 	font-size: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 180px;
 }
 
 .directory .description {
 	margin: 0 20px 0 94px;
 	font-size: 15px;
 	color: #7C7C7C;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 180px;
+
 }
 
 .josh-id-content_itemList {
@@ -417,7 +427,6 @@ li.mainitemlist.grid .thumbnail {
   width: 100%;
   height: 100%;
 }
-
 
 /* Double rows */
 
@@ -496,19 +505,21 @@ li.mainitemlist.rows .preview img {
 
 .detailView .directory .picture img {
 	margin: auto;
-	width: 200px;
+	width: 50%;
 }
 
 .detailView .directory .name {
-	margin: 0px 0px 0px 20px;
+	margin: 0px 0px 0px 15px;
 }
 
 .detailView .directory .description {
-	margin: 0px 0px 0px 20px;
+	margin: 0px 0px 0px 15px;
+	width: 100%;
 }
 
 .detailView .directory .content {
-	margin: 15px 20px 0px 20px;
+	margin: 15px 20px 0px 15px;
+	padding-bottom: 20px;
 }
 
 /* photo */
@@ -524,7 +535,7 @@ li.mainitemlist.rows .preview img {
 
 .picture-fullscreen {
 
-	width: 100%;
+	height: 100%;
 }
 
 /* video */

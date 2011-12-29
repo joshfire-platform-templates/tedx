@@ -49,9 +49,9 @@ return {
             '<span class="list-arrow"></span>' +
           '</div>' +
         '<% } else { %>' +
+          UI.tplItemPreview +
           '<div class="title"><%= item.name %></div>' +
           UI.getItemDescriptionTemplate(70) +
-          UI.tplItemPreview +
           '<span class="list-arrow"></span>' +
         '<% } %>'
     };
@@ -59,9 +59,9 @@ return {
 
   title : function() {
     return {
-            id: 'title', // only the title, no logo
+            id: 'title',
             type: Panel,
-            innerTemplate: '<%= Joshfire.factory.config.app.name %>'
+            innerTemplate: UI.tplHeader
           };
   },
 

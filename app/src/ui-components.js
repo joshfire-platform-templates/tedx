@@ -5,9 +5,13 @@
 Joshfire.define(['joshfire/uielements/list', 'joshfire/uielements/panel', 'joshfire/uielements/panel.manager', 'joshfire/uielements/button', 'joshfire/adapters/ios/uielements/video.youtube'], function(List, Panel, PanelManager, Button, Video) {
 	return {
     tplHeader : '<% if(Joshfire.factory.config.app.logo) { %>' + 
+                  '<div class="titleLogo">' +
                   '<img class="applogo" src="<%= Joshfire.factory.config.app.logo.url %>" alt="<%= Joshfire.factory.config.app.name %>" />' +
+                  '</div>' +
                 '<% } else { %>' +
+                  '<div class="title">' +
                   '<%= Joshfire.factory.config.app.name %>' +
+                  '</div>' +
                 '<% } %>',
 
     tplTweetItem :  '<div class="tweet">' +

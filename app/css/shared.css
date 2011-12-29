@@ -226,6 +226,10 @@ margin: 20px;
 
 }
 
+.aboutpage img.applogo {
+	height: 100px;
+}
+
 .aboutpage .appname {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 30px;

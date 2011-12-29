@@ -307,6 +307,8 @@ li.mainitemlist.grid {
   width: 20%;
   height: 200px;
   overflow: hidden;
+  border: none;
+  padding: 0;
 }
 
 li.mainitemlist.grid .thumbnail {

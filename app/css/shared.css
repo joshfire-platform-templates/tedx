@@ -1,6 +1,7 @@
 img.applogo {
-  height : 100%;
-  padding-left: 20px;
+  max-height: 90%;
+  max-width: 200px;
+  margin: 7px;
 }
 
 

@@ -1,0 +1,236 @@
+/* @group General */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: url('../images/bg_white.png');
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.loading {
+  background: #fff url('../images/spinner.gif') no-repeat center center;
+  width: 100%;
+  height: 100%
+}
+
+#splashscreen,
+.abs100 {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+#splashscreen {
+  background: #000 url('../images/spinner-inverted.gif') no-repeat center center;
+}
+
+/* @end */
+
+/* @group Sidebar left */
+
+#defaultApp__sidebarleft {
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 110px;
+  background: -webkit-linear-gradient(right, #dcdcdc, #eaeaea);
+  text-align: center;
+  -webkit-box-shadow: inset -1px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#defaultApp__sidebarleft__menu {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+#defaultApp__sidebarleft__menu ul {}
+
+#defaultApp__sidebarleft__menu li {
+  position: relative;
+  height: 109px;
+  width: 109px;
+/*  border-right: 3px solid transparent;*/
+  border-top: 1px solid #c9c9c9;
+}
+
+#defaultApp__sidebarleft__menu li:last-child {
+  border-bottom: 1px solid #c9c9c9;
+}
+
+#defaultApp__sidebarleft__menu li .picto {
+  width: 30px;
+  height: 30px;
+  margin: 30px auto 0;
+  -webkit-mask-box-image: url('../images/newspaper.png');
+  background: #949494;
+}
+
+#defaultApp__sidebarleft__menu li .item-videos {
+  -webkit-mask-box-image: url('../images/movie.png');
+}
+
+#defaultApp__sidebarleft__menu li .item-photos {
+  -webkit-mask-box-image: url('../images/photos.png');
+}
+
+#defaultApp__sidebarleft__menu li .item-rss,
+#defaultApp__sidebarleft__menu li .item-spreadsheets {
+  -webkit-mask-box-image: url('../images/newspaper.png');
+}
+
+#defaultApp__sidebarleft__menu li .item-ical {
+  -webkit-mask-box-image: url('../images/calendar.png');
+}
+
+#defaultApp__sidebarleft__menu li .item-tweets {
+  -webkit-mask-box-image: url('../images/bird.png');
+}
+
+#defaultApp__sidebarleft__menu li .name {
+  text-transform: capitalize;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: auto;
+  font-size: 12px;
+  color: #909090;
+}
+
+#defaultApp__sidebarleft__menu li.selected {
+  background: #fff;
+/*  border-right: 3px solid #ff9900;*/
+  -webkit-box-shadow: inset -1px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#defaultApp__sidebarleft__menu li.selected .picto {
+  background: #1f2222;
+}
+
+#defaultApp__sidebarleft__menu li.selected .name {
+  color: #1f2222;
+}
+
+/* @end */
+
+/* @group Sidebar right */
+
+#defaultApp__sidebarright {
+  position: absolute;
+  top: 0; left: 110px; bottom: 0; right: 0;
+}
+
+/* @group Header */
+
+.header {
+  border-bottom: 1px solid #404040;
+  background: -webkit-linear-gradient(top, #d8d8d8, #b8b8b8);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#defaultApp__sidebarright__header {
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  height: 44px;
+  text-align: center;
+  line-height: 43px;
+  color: #585858;
+  text-transform: capitalize;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
+}
+
+#defaultApp__sidebarright__header__prev {
+  -webkit-appearance: none;
+  -webkit-box-shadow: 1px 0 1px rgba(255, 255, 255, 0.3);
+  background: none;
+  border-radius: 0;
+  border: 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  color: #585858;
+  display: none;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: bold;
+  height: 100%;
+  line-height: 100%;
+  margin: 0;
+  max-width: 15%;
+  overflow: hidden;
+  padding: 0 10px;
+  position: relative;
+  text-overflow: ellipsis;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* @end */
+
+/* @group Item lists */
+
+#defaultApp__sidebarright__content__itemList ul {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.list-arrow {
+  position: absolute;
+  right: 10px; top: 0; bottom: 0;
+  width: 10px;
+  background: url('../images/list-arrow.png') no-repeat center center;
+  background-size: 10px 14px;
+}
+
+#defaultApp__sidebarright__content {
+  position: absolute;
+  top: 45px; right: 0; bottom: 0; left: 0;
+  overflow: auto;
+}
+
+
+#defaultApp__sidebarright__content__itemList,
+#defaultApp__sidebarright__content__detail {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+#defaultApp__sidebarright__content__detail {
+  background: #fff;
+  padding: 6px;
+}
+
+#defaultApp__sidebarright__content__detail .title {
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #c5c3be;
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#defaultApp__sidebarright__content__detail .title h1 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 300;
+  font-weight: bold;
+}
+
+#defaultApp__sidebarright__content__detail .title p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+#defaultApp__sidebarright__content__detail__article {
+  width: 80%;
+  margin: auto;
+}
+
+/* @end */
+
+/* @end */

@@ -52,40 +52,23 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
         prevBtn.hide();
       });
 
-      // Refresh content each time new data is attached
-      itemList.subscribe('data', function(event, data) {
-        itemList.refresh();
-      });
-
       // Open item when selected
       itemList.subscribe('select', function(event, data) {
-
-        //use this code if wyou want to disable the preview for a certain datasource
-        //var dataPath = itemList.dataPath + data[0];
-        //var ds = _app.data.get(dataPath);
-
-        // display detail page except for twitter
-        //if(ds.source != 'twitter' ) {
         _this.ui.element('/content/detail').show();
-
-        //   _this.ui.element('/content/detail').setDataPath(dataPath);
-        //   _this.ui.element('/content/detail/article').setDataPath(dataPath);
-        //   _this.ui.element('/content/detail/video').setDataPath(dataPath);
-        //   _this.ui.element('/content/detail/video/player.youtube').setDataPath(dataPath);
-        //   _this.ui.element('/content/detail/video/title').setDataPath(dataPath);                                          
-        // }
-
       });
 
-      // if no item is displayed, display a message
       itemList.subscribe('afterRefresh', function(event, data) {
+        // if list is empty, display a message
         var $items = $('#defaultApp__content__itemList li');
         if($items.length == 0) {
           $('#defaultApp__content__itemList').html(UItpl.tplNothingToSeeHere);
         }
 
+        // if list is a grid, add a clear:both at the end for scrolling
         if( $('#defaultApp__content__itemList li.grid').length > 0 ) {
-           $('#defaultApp__content__itemList ul').append('<li style="clear:both;"></li>');
+          if( ! $('#defaultApp__content__itemList ul li').last().hasClass('clearfix') ) {
+            $('#defaultApp__content__itemList ul').append('<li class="clearfix"></li>');
+          }
         }
       });
 

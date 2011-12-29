@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Phone</title>
-    <link rel="stylesheet" href="css/shared.css">
-    <link rel="stylesheet" href="css/phone.css">
+    <title>Tablet</title>
+    <link rel="stylesheet" href="css/shared.css">    
+    <link rel="stylesheet" href="css/tablet.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -16,16 +16,14 @@
     <!-- <link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png"> -->
     <!-- For nokia devices: -->
     <!-- <link rel="shortcut icon" href="img/l/apple-touch-icon.png"> -->
-
-    <script src="src/toDate.js"></script>
     <script data-main="./" src="joshfire/adapters/ios/bootstrap.js"></script>
-    <script data-joshfire-bootstrap src="http://localhost:40021/bootstrap/4ef1c94600335d000000005f/auto/phone/"></script>
+    <script data-joshfire-bootstrap src="http://localhost:40021/bootstrap/4eeb26685492d200000001db/auto/tablet/"></script>
   </head>
-  <body class="device-phone">
+  <body class="device-tablet">
     <div id="splashscreen"></div>
     <script>
-      Joshfire.require(['app.phone'], function(App) {
-        window._app=new App();
+      Joshfire.require(['app.tablet'], function(App) {
+        new App();
       });
     </script>
   </body>

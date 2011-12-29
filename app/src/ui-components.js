@@ -25,7 +25,8 @@ Joshfire.define(['joshfire/uielements/list', 'joshfire/uielements/panel', 'joshf
                   '</div>' +
                   '<div class="tweet-content">' +
                     '<p class="content"><%= item.name %></p>' +
-                    '<p class="date"><%= item.datePublished ? toDate(item.datePublished).toTimeString().substring(0, 5) : "" %></p>' + 
+                    '<p class="date"><%= prettyDate(item.datePublished) %></p>' + 
+                    //'<p class="date"><%= item.datePublished ? toDate(item.datePublished).toTimeString().substring(0, 5) : "" %></p>' + 
                   '</div>' +                                     
                 '</div>',
 

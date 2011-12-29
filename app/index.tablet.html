@@ -5,25 +5,17 @@
     <title>Tablet</title>
     <link rel="stylesheet" href="css/shared.css">    
     <link rel="stylesheet" href="css/tablet.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <!-- For iPhone 4 with high-resolution Retina display: -->
-    <!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png"> -->
-    <!-- For first-generation iPad: -->
-    <!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png"> -->
-    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <!-- <link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png"> -->
-    <!-- For nokia devices: -->
-    <!-- <link rel="shortcut icon" href="img/l/apple-touch-icon.png"> -->
+
+    <script src="src/toDate.js"></script>    
     <script data-main="./" src="joshfire/adapters/ios/bootstrap.js"></script>
-    <script data-joshfire-bootstrap src="http://localhost:40021/bootstrap/4eeb26685492d200000001db/auto/tablet/"></script>
+    <script data-joshfire-bootstrap ></script>
+
   </head>
-  <body class="device-tablet">
+  <body class="device-desktop">
     <div id="splashscreen"></div>
     <script>
       Joshfire.require(['app.tablet'], function(App) {
-        new App();
+         window._app=new App();
       });
     </script>
   </body>

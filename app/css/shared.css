@@ -226,8 +226,8 @@ margin: 20px;
 
 }
 
-img.applogo {
-	height: 120px;
+.aboutpage img.applogo {
+	height: 100px;
 }
 
 .aboutpage .appname {
@@ -571,3 +571,5 @@ color-stop(1.0, rgba(255,255,255,0))
 .clearfix {
   clear:both;
 }
+
+

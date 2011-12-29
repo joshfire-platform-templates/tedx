@@ -88,11 +88,7 @@ background: -webkit-linear-gradient(top, #d8d8d8, #b8b8b8);*/
   background-color: #292929;
 }
 
-
-
-
-.josh-id-header_title{
-
+.josh-id-header_title .title{
   position: absolute;
   left: 2%;
   background: transparent;
@@ -102,12 +98,16 @@ background: -webkit-linear-gradient(top, #d8d8d8, #b8b8b8);*/
   padding: 0;
   color: #F1F1F1;
   text-shadow: 0 1px black;
-}
-  
-}
+}  
 
-.josh-id-header_menu.menu{
-
+.josh-id-header_title .titleLogo{
+  position: absolute;
+  left: 2%;
+  background: transparent;
+  top: 0;
+  padding: 0;
+  line-height: 33px;
+  padding: 0;
 }
 
 .menu {

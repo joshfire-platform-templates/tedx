@@ -7,35 +7,64 @@ img.applogo {
 /* MENU LIST */
 /* à voir si ça pete pas iphone template ? auquel cas remettre dans css tablet event*/
 
-.menu li .picto.item-videos {
-  background-image: url('../images/movie.png');
-  }
 
 
 .menu li .picto.item-photos {
   background-image: url('../images/photos.png');
 }
 
+.menu li.selected .picto.item-photos {
+  background-image: url('../images/photosSelected.png');
+}
+
 .menu li .picto.item-spreadsheets {
   background-image: url('../images/people.png');
+}
+
+.menu li.selected .picto.item-spreadsheets {
+  background-image: url('../images/peopleSelected.png');
 }
 
 .menu li .picto.item-ical {
   background-image: url('../images/calendar.png');
 }
 
+.menu li.selected .picto.item-ical {
+  background-image: url('../images/calendarSelected.png');
+}
+
 .menu li .picto.item-tweets {
   background-image: url('../images/twit.png');
+}
+
+.menu li.selected .picto.item-tweets {
+  background-image: url('../images/twitSelected.png');
 }
 
 .menu li .picto.item-about{
   background-image: url('../images/about.png');
 }
 
+.menu li.selected .picto.item-about{
+  background-image: url('../images/aboutSelected.png');
+}
+
 .menu li.more-footer .picto {
   background-image: url('../images/point.png');
 }
 
+.menu li.more-footer.selected .picto {
+  background-image: url('../images/pointSelected.png');
+}
+
+.menu li .picto.item-videos {
+  background-image: url('../images/movie.png');
+  }
+
+
+.menu li.selected .picto.item-videos {
+  background-image: url('../images/movieSelected.png');
+}
 
 
 /* ITEM LIST */

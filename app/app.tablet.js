@@ -79,7 +79,6 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
         _this.ui.element('/content/detail').show();
       });
 
-      // Todo: find better event to select first item
       itemList.subscribe('afterRefresh', function(event, data) {
         var $items = $('#defaultApp__content__itemList li');
         if($items.length == 0) {
@@ -91,6 +90,12 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
           }
         }
       });
+
+      // force refresh each time is shown
+      itemList.subscribe('afterShow', function(event, data) {
+        itemList.refresh();
+      });
+
 
       callback(null, true);
     }

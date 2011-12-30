@@ -139,7 +139,7 @@ background: -webkit-linear-gradient(top, #d8d8d8, #b8b8b8);*/
   position: absolute;
   background: transparent; /* rgba(30, 230, 120, 0.5);  green */
   max-width: 704px;
-  right: 10%;
+  right: 10px;
 }
 
 .menu ul {
@@ -173,7 +173,7 @@ display:none;
 
 .menu li .picto{
   padding: 0;
-  width: 75px;
+  width: 68px;
   height: 43px;
   margin:9px 3px 8px 3px;
   color: #eaeaea;
@@ -313,7 +313,7 @@ background-color: rgba(255,255,255,0.1);
 
 .itemList{
   position: absolute;
-  width: 30%;
+  width: 380px;
   top: 0;
   left: 0;
   bottom: 0;
@@ -434,7 +434,7 @@ li.mainitemlist.list .endDate {
 
 .detailView{
   position: absolute;
-  left: 30%;
+  left: 380px;
   top: 0;
   right: 0;
   bottom: 0;

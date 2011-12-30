@@ -193,7 +193,12 @@ display:none;
 
 .menu li.selected .picto{
   background-image: url('../images/newsSelected.png');
+}
 
+@media (orientation: portrait) {
+  .menu li .picto{
+    width: 50px;
+  }
 }
 
 /*
@@ -304,9 +309,6 @@ background-color: rgba(255,255,255,0.1);
   left: 0;
   z-index: -1;
   background: rgba(45,45,45,1);
-
-);
-
 }
 
 /* ITEM LIST */

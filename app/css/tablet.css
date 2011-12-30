@@ -440,6 +440,10 @@ li.mainitemlist.list .endDate {
   bottom: 0;
 }
 
+.about {
+  background-color: black;
+}
+
 .detailViewItem, .about {
   position: absolute;
   top: 0;

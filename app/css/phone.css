@@ -521,6 +521,10 @@ li.mainitemlist.grid .thumbnail {
 
 /* ABOUT PAGE */
 
+.about {
+  background-color: black;
+}
+
 .aboutpage {
   color: #fff;
 

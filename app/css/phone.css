@@ -59,6 +59,8 @@ ul {
 
 
 .header {
+  /* Use this for a red header */
+  /*
   border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   border-top:1px solid rgba(255, 255, 255, 0.5);
 
@@ -72,8 +74,12 @@ background-image: -webkit-gradient(
 	color-stop(0.96, rgb(252,96,68))
   );
    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   */
+  border-bottom: 1px solid #404040;
+  background: #262626;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);   
   height: 43px;
-
+  background-image:url('../images/header.png')
   
 }
 

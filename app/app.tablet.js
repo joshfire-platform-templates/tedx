@@ -44,6 +44,8 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
         // Set the new dataPath
         itemList.setDataPath('/datasource/' + datasourceId + '/');
 
+        _this.data.fetch('/datasource/' + datasourceId + '/', {}, function() {});
+
         // Check if the selected datasource should be displayed fullscreen
         var dataCol;
         for(var i=0; i< _this.data.tree['/datasource/'].length; i++ ) {
@@ -90,12 +92,6 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
           }
         }
       });
-
-      // force refresh each time is shown
-      itemList.subscribe('afterShow', function(event, data) {
-        itemList.refresh();
-      });
-
 
       callback(null, true);
     }

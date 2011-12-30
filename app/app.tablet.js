@@ -1,4 +1,4 @@
-Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tree.ui.tablet', 'joshfire/utils/splashscreen', 'joshfire/uielements/panel', 'src/ui-components'], function(BaseApp, Class, Data, UI, Splash, Panel, UItpl) {
+Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tree.ui.tablet', 'joshfire/utils/splashscreen', 'joshfire/uielements/panel', './src/lib/ba-linkify', 'src/ui-components'], function(BaseApp, Class, Data, UI, Splash, Panel, linkify, UItpl) {
 
   return Class(BaseApp, {
 
@@ -13,6 +13,7 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
           menu = _this.ui.element('/header/menu'),
           itemList = _this.ui.element('/content/itemList'),
           detailPanel = _this.ui.element('/content/detail'),
+          twitterPanel = _this.ui.element('/content/detail/twitter'),
           title = _this.ui.element('/header/title');
 
       this.splash = new Splash();
@@ -63,6 +64,14 @@ Joshfire.define(['joshfire/app', 'joshfire/class', './src/tree.data', './src/tre
 
         // Show itemList, because we could be on a detail panel
         _this.ui.element('/content').switchTo('itemList');
+      });
+
+      // linkify the tweets
+      twitterPanel.subscribe('afterRefresh', function(event, data) {
+        var cb = function( text, href ) {
+          return href ? '<a href="' + href + '" title="' + href + '" rel="external" target="_blank">' + text + '<\/a>' : text;
+        }
+        $('.linkify').html( linkify( $('.linkify').text(), {callback: cb} ) );
       });
 
       // Open item when selected

@@ -9,36 +9,21 @@
    ],
   "joshfire": {
     "images": {
-      "small":"http://i.imgur.com/XF5iy.png",
-      "big":"http://i.imgur.com/xU1Nn.png"
+      "small":"marketing/image-small.png",
+      "big":"marketing/image-big.png"
     },
     "devices": [
-      {
-        "devices": "desktop",
-        "startfile": "app/index.desktop.html",
-        "images": "marketing/image-small.png"
-      },
       {
         "devices": "phone",
         "startfile": "app/index.phone.html",
         "images":"marketing/image-small.png",
-        "screenshots":["marketing/screenshot-phone.png"]
+        "screenshots":["marketing/screenshot-phone-1.png", "marketing/screenshot-phone-2.png"]
       },
       {
         "devices": "tablet",
         "startfile": "app/index.tablet.html",
         "images":"marketing/image-small.png",
-        "screenshots":["marketing/screenshot-tablet-portrait.png"]    
-      },
-      {
-        "devices": "tv",
-        "startfile": "app/index.tv.html",
-        "images":"marketing/image-small.png",
-        "screenshots":["marketing/screenshot-tv.jpg"]
-      },
-      {
-        "devices": "*",
-        "startfile": "app/index.html"
+        "screenshots":["marketing/screenshot-tablet-landscape-1.jpg", "marketing/screenshot-tablet-landscape-2.jpg"]
       }
     ],
     "datasources": {

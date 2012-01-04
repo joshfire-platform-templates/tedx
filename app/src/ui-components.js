@@ -6,7 +6,7 @@ Joshfire.define(['joshfire/uielements/list', 'joshfire/uielements/panel', 'joshf
 	return {
     tplHeader : '<% if(Joshfire.factory.config.app.logo) { %>' + 
                   '<div class="titleLogo">' +
-                  '<img class="applogo" src="<%= Joshfire.factory.config.app.logo.url %>" alt="<%= Joshfire.factory.config.app.name %>" />' +
+                  '<img class="applogo" src="<%= Joshfire.factory.config.app.logo.contentURL %>" alt="<%= Joshfire.factory.config.app.name %>" />' +
                   '</div>' +
                 '<% } else { %>' +
                   '<div class="title">' +
@@ -86,7 +86,7 @@ Joshfire.define(['joshfire/uielements/list', 'joshfire/uielements/panel', 'joshf
 
     tplAboutPage: '<div class="aboutpage">' +
                     //'<% if(Joshfire.factory.config.app.logo) { %>' + 
-                    //  '<img class="applogo" src="<%= Joshfire.factory.config.app.logo.url %>" alt="<%= Joshfire.factory.config.app.name %>" />' +
+                    //  '<img class="applogo" src="<%= Joshfire.factory.config.app.logo.contentURL %>" alt="<%= Joshfire.factory.config.app.name %>" />' +
                     //'<% } else { %>' +
                     //  '<h2 class="appname"><%= Joshfire.factory.config.app.name %></h2>' +
                     //'<% } %>' +  

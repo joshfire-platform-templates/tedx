@@ -1,0 +1,554 @@
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #171717;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: #272727;
+}
+
+a {
+color: black;
+
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+img.applogo {
+  max-height: 90%;
+  max-width: 200px;
+  margin: 7px;
+}
+
+.loading {
+  background: #fff url('../images/spinner.gif') no-repeat center center;
+  width: 100%;
+  height: 100%
+}
+
+.list-arrow {
+  position: absolute;
+  right: 10px; top: 0; bottom: 0;
+  width: 10px;
+  background: url('../images/list-arrow.png') no-repeat center center;
+  background-size: 10px 14px;
+}
+
+#splashscreen {
+  background: #000 url('../images/spinner-inverted.gif') no-repeat center center;
+}
+
+#splashscreen,
+#defaultApp__,
+.abs100,
+.itemList {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+#defaultApp__header {
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  -webkit-box-shadow: 0 0 10px #171717;
+  z-index: 10;
+
+  
+
+}
+
+
+.header {
+  /* Use this for a red header */
+  /*
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  border-top:1px solid rgba(255, 255, 255, 0.5);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, rgb(178,30,4)),
+	color-stop(0.5, rgb(235,41,6)),
+	color-stop(0.52, rgb(255,43,6)),
+	color-stop(0.96, rgb(252,96,68))
+  );
+   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   */
+  border-bottom: 1px solid #404040;
+  background: #262626;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);   
+  height: 43px;
+  background-image:url('../images/header.png')
+  
+}
+
+#defaultApp__header__prev {
+  -webkit-appearance: none;
+  background: none;
+  border-radius: 0;
+  border: 0;
+  color: #585858;
+  display: none;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: bold;
+  height: 100%;
+  line-height: 100%;
+  margin: 10px;
+  max-width: 15%;
+  overflow: hidden;
+  padding: 0 10px;
+  position: relative;
+  text-overflow: ellipsis;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
+  white-space: nowrap;
+  z-index: 10;
+  text-indent: 9999px;
+  background-image:url('../images/fleche.png');
+  background-repeat: no-repeat;
+  
+}
+
+#defaultApp__content {
+  position: absolute;
+  top: 43px; right: 0; bottom: 49px; left: 0;
+  overflow: auto;
+  background-color: #fff;
+}
+
+#defaultApp__header__title {
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  text-transform: capitalize;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.mainitemlist ul {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* CONTENT */
+
+#defaultApp__content__detail {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0.9)8%,rgba(255,255,255,0) 100%), url('../images/fond-video.png');
+  background: -webkit-gradient( linear, left top, right top, color-stop(0.0, rgba(255,255,255,0.9)), color-stop(1.0, rgba(225,225,225,0)) ), url('../images/fond-video.png');
+  
+  
+  
+  
+  z-index: 101;
+  overflow: hidden;  
+}
+
+
+
+/* generic*/
+#defaultApp__content__detail .title {
+  background: #202020;
+  color: #FF2B06;
+  position: absolute;
+  background-image: url('../images/fond-noir.png');
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 246px;
+}
+
+#defaultApp__content__detail .title h1 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  margin: 0px 20px 0 15px; 
+
+}
+
+#defaultApp__content__detail .title p {
+  margin: 5px 20px;
+  font-size: 13px;
+  color: #7c7c7c;
+  font-weight: 200;
+}
+
+.josh-id-content_detail_video{
+background:black;
+height: 100%;
+}
+
+#defaultApp__footer {
+  position: absolute;
+  right: 0; bottom: 0;  left: 0;
+  height: 50px;
+  background-color: #272727;
+  background-image: url('../images/bar-bas.png');  
+  text-align: center;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  -webkit-transition-property: height;
+  -webkit-transition-duration: 0.5s;
+}
+
+#defaultApp__footer ul {
+	text-align: right;
+	height: 100%;
+}
+
+
+/*article*/
+
+#defaultApp__content__detail  .josh-id-content_detail_article .title {
+background: transparent;
+position: initial;
+}
+
+.josh-id-content_detail_article .title h1{
+line-height: 22px;
+color: #000;
+}
+
+#defaultApp__content__detail  .josh-id-content_detail_article .body {
+background: rgba(255,255,255,0.8);
+padding: 15px;
+border: 1px solid #CFCFCF;
+margin: 20px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+box-shadow: 0 1px rgba(255,255,255,0.7), inset 0 1px rgba(0,0,0,0.2);
+}
+
+
+/* video */
+
+.josh-id-content_detail_video{
+background: #202020 url('../images/fond-noir.png');
+height: 100%;
+}
+
+
+/* google */
+
+.detailView .directory .picture img {
+	margin: auto;
+	width: 50%;
+}
+
+/*  twitter */ 
+
+.josh-id-content_detail_twitter{
+
+background: #FFF;
+height: 100%;
+}
+
+
+.detailView .tweet .tweet-header {
+  background: url('../images/triangle-twit.png') no-repeat, url('../images/fond-twit.png'); 
+  height: 95px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.detailView .tweet .tweet-content{
+margin: 20px;
+}
+
+
+
+.detailView .tweet .tweet-header .username {
+  color: #fff;
+  margin: 0 95px;
+  padding-top: 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+
+}
+
+.detailView .tweet .tweet-header .userlogin {
+  color: #fff;
+  margin: 0 95px;
+  padding-top: 1px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.detailView .tweet .tweet-header img {
+   height: 59px;
+   margin: 15px;
+   position: absolute;
+ 
+}
+
+.detailView .tweet .tweet-content .content {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  font-size: 20px;
+  /*
+  margin-left: 15px;
+  */
+  margin-bottom: 5px;
+}
+
+.detailView .tweet .tweet-content .content a {
+  color: #000000;
+}
+
+.detailView .tweet .tweet-content .date {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  color: #c3c1c1;
+  font-size: 20px;
+ 
+  margin-top: 5px;
+}
+
+
+
+/* ITEM LIST */
+
+/* List */
+
+li.mainitemlist.list .title {
+	font-size: 15px;
+	float: left;
+	padding: 15px 30px 0 110px;
+	overflow: hidden;	
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	width: 180px;
+	word-wrap: break-word; 
+}
+
+
+
+/* Liste EVENT */
+
+.event {
+  padding: 0 20px 0 15px;
+}
+
+.event .startDate {
+
+  margin-left: 5px;
+
+}
+
+.event .content {
+  padding: 8px 12px 0 58px;
+
+}
+
+.endDate {
+
+	margin: 19px 0 0 56px;
+}
+
+
+
+/* DETAIL EVENT */
+
+
+.detailView .event {
+ 
+  padding: 8px 20px 0 20px;
+}
+
+.detailView .event .startDate {
+  margin-top: 19px;
+  margin-left: 5px;
+
+}
+
+.detailView .event .content {
+
+  padding: 0 12px 0 60px;
+
+}
+
+
+
+.detailView .endDate {
+	position: absolute;
+	font-size: 18px;
+	color: #666;
+	font-weight: 300;
+	margin: 19px 0 0 56px;
+}
+
+.detailView .event .location{
+   padding: 23px 0 0 0;
+}
+
+
+/*   */ 
+
+#defaultApp__footer.opened {
+  height: 100px;
+}
+
+.defaultApp__footer_scroller {
+  height: 100%;
+}
+
+#defaultApp__footer li {
+  display: inline-block;
+  margin: 5px;
+}
+
+
+
+#defaultApp__footer li .picto {
+  width: 52px;
+  height: 39px;
+  margin: auto;
+  background-position: center;
+  background-image: url('../images/news.png');
+  background-repeat: no-repeat;
+}
+
+#defaultApp__footer li .picto.item-videos {
+  background-image: url('../images/movie.png');
+}
+
+#defaultApp__footer li .picto.item-photos {
+  background-image: url('../images/photos.png');
+}
+
+#defaultApp__footer li .picto.item-rss {
+  background-image: url('../images/news.png');
+}
+
+#defaultApp__footer li .picto.item-spreadsheets {
+  background-image: url('../images/people.png');
+}
+
+#defaultApp__footer li .picto.item-ical {
+  background-image: url('../images/calendar.png');
+}
+
+#defaultApp__footer li .picto.item-tweets {
+  background-image: url('../images/twit.png');
+}
+
+#defaultApp__footer li .picto.item-about{
+  background-image: url('../images/about.png');
+}
+
+#defaultApp__footer li.more-footer .picto {
+  background-image: url('../images/point.png');
+}
+
+#defaultApp__footer li .name {
+  text-transform: capitalize;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: auto;
+  font-size: 12px;
+  color: #909090;
+  display: none;
+}
+
+#defaultApp__footer li.selected {
+  background-color: rgba(225,225,225,0.1);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#defaultApp__footer li.selected .picto {
+
+}
+
+#defaultApp__footer li.selected .name {
+  color: #1f2222;
+  display: none;
+}
+
+.josh-id-content_detail_article{
+  line-height: 24px;
+  padding: 10px 20px;
+}
+/* grid */
+
+li.mainitemlist.grid {
+  float: left;
+  width: 25%;
+  height: 100px;
+  overflow: hidden;
+}
+
+li.mainitemlist.grid .thumbnail {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.detailViewItem, .about {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.detailViewItem .directory {
+/*   height: 800px;
+  width: 200px; */
+}
+
+/* ABOUT PAGE */
+
+.about {
+  background-color: black;
+}
+
+.aboutpage {
+  color: #fff;
+
+/* multiple backgrounds lag on iPhone*/
+/*
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%), url('../images/fond-about.png');
+  
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,	
+    color-stop(0.0, rgba(0,0,0,0)),
+    color-stop(1.0, rgba(0,0,0,0.65))
+  ), url('../images/fond-about.png');
+*/  
+  background-color: #2d2d2d;
+ 
+}
+
+/* page agenda */
+
+.detailView .directory .picture {
+	background-image: url('../images/fond-noir.png');
+	padding: 20px;
+	text-align: center;
+}
+

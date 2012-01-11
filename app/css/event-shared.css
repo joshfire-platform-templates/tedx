@@ -1,0 +1,601 @@
+/* MENU LIST */
+/* à voir si ça pete pas iphone template ? auquel cas remettre dans css tablet event*/
+
+
+
+.menu li .picto.item-photos {
+  background-image: url('../images/photos.png');
+}
+
+.menu li.selected .picto.item-photos {
+  background-image: url('../images/photosSelected.png');
+}
+
+.menu li .picto.item-spreadsheets {
+  background-image: url('../images/people.png');
+}
+
+.menu li.selected .picto.item-spreadsheets {
+  background-image: url('../images/peopleSelected.png');
+}
+
+.menu li .picto.item-ical {
+  background-image: url('../images/calendar.png');
+}
+
+.menu li.selected .picto.item-ical {
+  background-image: url('../images/calendarSelected.png');
+}
+
+.menu li .picto.item-tweets {
+  background-image: url('../images/twit.png');
+}
+
+.menu li.selected .picto.item-tweets {
+  background-image: url('../images/twitSelected.png');
+}
+
+.menu li .picto.item-about{
+  background-image: url('../images/about.png');
+}
+
+.menu li.selected .picto.item-about{
+  background-image: url('../images/aboutSelected.png');
+}
+
+.menu li.more-footer .picto {
+  background-image: url('../images/point.png');
+}
+
+.menu li.more-footer.selected .picto {
+  background-image: url('../images/pointSelected.png');
+}
+
+.menu li .picto.item-videos {
+  background-image: url('../images/movie.png');
+  }
+
+
+.menu li.selected .picto.item-videos {
+  background-image: url('../images/movieSelected.png');
+}
+
+
+/* ITEM LIST */
+
+li.mainitemlist {
+  -webkit-box-sizing: border-box;
+  list-style-type: none;
+  position: relative;
+  overflow: hidden;
+  background: #fff; 
+}
+
+/* list */
+li.mainitemlist.list {
+  position: relative;
+  min-height: 74px;
+  line-height: inherit;
+  border-bottom: 1px solid #cfcfcf;
+  background-image: -webkit-linear-gradient(left, rgba(255,255,255,0.9)0%,rgba(255,255,255,0) 100%), url('../images/fond-video.png');
+ 
+
+	background-image: -webkit-gradient(
+	linear,
+	left top,
+	right top,	
+	color-stop(0.0, rgba(255,255,255,0.9)),
+	color-stop(1.0, rgba(255,255,255,0))
+), url('../images/fond-video.png');
+
+  
+   
+}
+
+/*
+li.mainitemlist.list .title {
+	font-size: 15px;
+	float: left;
+	padding: 15px 30px 0 110px;
+	overflow: hidden;	
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	width: 180px;
+	word-wrap: break-word; 
+}
+*/
+
+
+li.mainitemlist.list .abstract {
+  color: #171717;
+  font-size: 13px;
+  float: left;
+  white-space: normal;
+  margin-right: 70px;
+  display: none;
+}
+
+li.mainitemlist.list .preview {
+  position: absolute;
+}
+
+li.mainitemlist.list .preview img {
+  height: 74px;
+}
+
+li.mainitemlist .thumbnail {
+  float: left;
+  width: 74px;
+  height: 74px;
+  background-size: cover;
+}
+
+li.mainitemlist.list .tweet {
+  margin: 15px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ 
+}
+
+li.mainitemlist.list .tweet img {
+ height: 58px;
+ position: absolute;
+
+ 
+}
+
+li.mainitemlist.list .tweet .user{
+  margin-bottom: 0px;
+ }
+
+li.mainitemlist.list .tweet .user .name {
+  display: none;
+ }
+
+li.mainitemlist.list .tweet .user .login {
+  margin-left: 73px;
+  font-size: 15px;
+  font-weight: 700;
+ } 
+ 
+ 
+ li.mainitemlist.list .tweet .content {
+  margin-left: 73px;
+  font-size: 15px;
+  margin-top: 6px;
+  margin-bottom: 0px;
+ }
+ 
+ li.mainitemlist.list .tweet .date {
+  margin-left: 73px;
+  color: #7c7c7c;
+  font-size: 15px;
+  margin-top: 6px;
+ }
+ 
+ /*
+ 
+.detailView .tweet .tweet-header {
+  background: url('../images/triangle-twit.png') no-repeat, url('../images/fond-twit.png'); 
+  height: 95px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.detailView .tweet .tweet-content{
+margin: 20px;
+}
+
+
+
+.detailView .tweet .tweet-header .username {
+  color: #fff;
+  margin: 0 95px;
+  padding-top: 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+
+}
+
+.detailView .tweet .tweet-header .userlogin {
+  color: #fff;
+  margin: 0 95px;
+  padding-top: 1px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.detailView .tweet .tweet-header img {
+   height: 59px;
+   margin: 15px;
+   position: absolute;
+ 
+}
+
+.detailView .tweet .tweet-content .content {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  font-size: 20px;
+ 
+  margin-left: 15px;
+ 
+  margin-bottom: 5px;
+}
+
+.detailView .tweet .tweet-content .content a {
+  color: #000000;
+}
+
+.detailView .tweet .tweet-content .date {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  color: #c3c1c1;
+  font-size: 20px;
+ 
+  margin-top: 5px;
+}
+
+*/
+
+.aboutpage {
+  color: #fff;
+
+}
+
+.aboutpage img.applogo {
+	height: 100px;
+}
+
+.aboutpage .appname {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  margin: 0px 0 0 15px;
+
+}
+
+
+.aboutpage .abouthtml {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  padding: 10px 60px 0 15px;
+  font-weight: normal;
+
+}
+}
+
+.aboutpage .mw-headline {
+   font-weight: 600;
+   font-size: 15px;
+    margin: 0 0 0 0;
+}
+
+.aboutpage h2 {
+  margin: 35px 0 0 0;
+  font-weight: normal;
+  font-size: 20px;
+
+}
+
+.aboutpage a {
+  color: #cccccc;
+}
+
+
+/* Liste event */
+
+.event {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px; 
+}
+
+.event .startDate {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 7px;
+}
+
+
+
+.event .content {
+  font-size: 18px;
+  color: #666;
+  font-weight: 300;
+}
+
+.endDate {
+	position: absolute;
+	font-size: 18px;
+	color: #666;
+	font-weight: 300;
+
+}
+
+
+#defaultApp__content__detail__event .event{
+	background-image: -webkit-linear-gradient(left, rgba(255,255,255,0.9)0%,rgba(194,194,194,0.7) 100%), url('../images/fond-calendar.png');
+	
+ background-image: -webkit-gradient(
+linear,
+left top,
+right top,	
+color-stop(0.0, rgba(255,255,255,0.9)),
+color-stop(1.0, rgba(194,194,194,0.7))
+), url('../images/fond-calendar.png');
+	
+	position: absolute;
+	bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    
+	
+}
+
+
+
+
+
+
+
+
+
+/* DETAIL EVENT */
+
+
+.detailView .event {
+ 
+  padding: 8px 20px 0 20px;
+}
+
+.detailView .event .location{
+   position: absolute;
+
+   font-size: 18px;
+   color: #666;
+   font-weight: 300;
+}
+
+}
+
+.detailView .event .startDate {
+  position: absolute;
+  color: #666;
+  margin-left: 0;
+
+}
+
+.detailView .event .endDate {
+	position: absolute;
+	font-size: 18px;
+	color: #666;
+	font-weight: 300;
+
+}
+
+.detailView .event .content {
+
+  padding: 0 12px 0 60px;
+
+}
+
+
+
+.detailView .event .event-content{
+	margin: 0px 0 0 0;
+}
+
+
+.detailView .event .name{
+	margin-top: 85px;
+
+}
+
+
+.detailView .event .description{
+	margin: 5px 0 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* annuaire */
+
+.directory .name {
+	margin: 0 20px 0 94px;
+	padding-top: 16px;
+	font-size: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 180px;
+}
+
+.directory .description {
+	margin: 0 20px 0 94px;
+	font-size: 15px;
+	color: #7C7C7C;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 180px;
+
+}
+
+.josh-id-content_itemList {
+	background-image: -webkit-linear-gradient(left, rgba(255,255,255,0.9)8%,rgba(255,255,255,0) 100%), url('../images/fond-video.png');
+	
+	 background-image: -webkit-gradient(
+linear,
+left top,
+right top,
+color-stop(0.0, rgba(255,255,255,0.9)),
+color-stop(1.0, rgba(225,225,225,0))
+), url('../images/fond-video.png');
+	
+	
+}
+
+/* grid */
+
+li.mainitemlist.grid {
+  float: left;
+  width: 25%;
+  height: 100px;
+  overflow: hidden;
+}
+
+li.mainitemlist.grid .thumbnail {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Double rows */
+
+li.mainitemlist.rows {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0 26px 0 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-shadow: #fff 0 0 1px;
+  text-transform: capitalize;
+
+  -webkit-box-sizing: border-box;
+  line-height: inherit;
+  padding: 6px;
+  width: 50%;
+  float: left;
+  height: 104px;
+}
+
+li.mainitemlist.item-ArticleStatus:nth-child(odd),
+li.mainitemlist.item-Event:nth-child(odd) {
+  background: #fff;
+}
+
+li.mainitemlist.item-ArticleStatus:nth-child(even),
+li.mainitemlist.item-Event:nth-child(even) {
+  background: #f2f2f2;
+}
+
+li.mainitemlist.rows .list-arrow {
+  display: none;
+}
+
+li.mainitemlist.rows .title {
+  font-weight: bold;
+  margin-right: 126px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+li.mainitemlist.rows .abstract {
+  color: gray;
+  font-size: 13px;
+  float: left;
+  white-space: normal;
+  margin-right: 126px;
+}
+
+li.mainitemlist.rows .preview {
+  position: absolute;
+  top: 6px; right: 6px;
+}
+
+li.mainitemlist.rows .preview img {
+/*  max-height: 40px;*/
+}
+
+.detailView .directory {
+	background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.9)0%,rgba(194,194,194,0.7) 100%), url('../images/fond-calendar.png');
+	
+	 background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.0, rgba(255,255,255,0.9)),
+    color-stop(1.0, rgba(194,194,194,0.7))
+    ), url('../images/fond-calendar.png');
+}
+
+
+
+.detailView .directory .name {
+	margin: 0px 0px 0px 15px;
+}
+
+.detailView .directory .description {
+	margin: 0px 0px 0px 15px;
+	width: 100%;
+}
+
+.detailView .directory .content {
+	margin: 15px 20px 0px 15px;
+	padding-bottom: 20px;
+}
+
+/* photo */
+
+#defaultApp__content__detail__image {
+	background-color: #171717;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+  text-align: center;
+}
+
+.picture-fullscreen {
+
+	height: 100%;
+}
+
+/* video */
+
+.empty-list {
+	font-size: 20px;
+	color: #000;
+	margin: auto;
+	background-image: -webkit-linear-gradient(left, rgba(255,255,255,0.9)0%,rgba(255,255,255,0) 100%), url('../images/fond-video.png');
+	
+	 background-image: -webkit-gradient(
+linear,
+left top,
+right top,	
+color-stop(0.0, rgba(255,255,255,0.9)),
+color-stop(1.0, rgba(255,255,255,0))
+), url('../images/fond-video.png');
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.empty-list p {
+	text-align: center;
+}
+
+.clearfix {
+  clear:both;
+}
+
+

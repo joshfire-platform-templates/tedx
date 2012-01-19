@@ -18,6 +18,9 @@ return {
     return {
       id: 'itemList',
       scroller: true,
+      scrollOptions:{
+        useTransition:true
+      },
       type: List,
       htmlClass: 'itemList',
       loadingTemplate: '<div class="loading"></div>',
@@ -99,6 +102,9 @@ return {
           htmlClass: 'detailViewItem',
           type: Panel,
           scroller: true, 
+          scrollOptions:{
+            useTransition:true
+          },
           uiDataMaster: params.uiDataMaster,
           loadingTemplate: '<div class="loading"></div>',
           innerTemplate:
@@ -134,7 +140,10 @@ return {
           htmlClass: 'detailViewItem',                     
           type: Panel,
           uiDataMaster: params.uiDataMaster,
-          scroller: true,                   
+          scroller: true,
+          scrollOptions:{
+            useTransition:true
+          },              
           loadingTemplate: '<div class="loading"></div>',
           innerTemplate: UI.tplTweetPage,
           onData: function(ui) {
@@ -154,7 +163,10 @@ return {
           id: 'google',
           htmlClass: 'detailViewItem',                  
           type: Panel,
-          scroller: true,                   
+          scroller: true,
+          scrollOptions:{
+            useTransition:true
+          },               
           uiDataMaster: params.uiDataMaster,
           loadingTemplate: '<div class="loading"></div>',
           innerTemplate:  '<div class="directory">' +
@@ -184,7 +196,10 @@ return {
           id: 'image',
           type: Panel,
           htmlClass: 'detailViewItem',                     
-          scroller: true,                   
+          scroller: true,
+          scrollOptions:{
+            useTransition:true
+          },                
           uiDataMaster: params.uiDataMaster,
           loadingTemplate: '<div class="loading"></div>',
           innerTemplate: '<img class="picture-fullscreen" src="<%= data.contentURL %>" alt="" />',
@@ -205,7 +220,10 @@ return {
           id: 'event',
           type: Panel,
           htmlClass: 'detailViewItem',                     
-          scroller: true,                   
+          scroller: true,
+          scrollOptions:{
+            useTransition:true
+          },               
           uiDataMaster: params.uiDataMaster,
           loadingTemplate: '<div class="loading"></div>',
           innerTemplate: UI.tplEventPage,
@@ -226,7 +244,10 @@ return {
           id: 'video',
           type: Panel,
           htmlClass: 'detailViewItem',                     
-          scroller: true,                   
+          scroller: true,
+          scrollOptions:{
+            useTransition:true
+          },        
           loadingTemplate: '<div class="loading"></div>',
           uiDataMaster: params.uiDataMaster,
           onData: function(ui) {
@@ -272,7 +293,10 @@ return {
   about : function(app, treePosition) {
     return {
       id: 'about',
-      scroller: true,               
+      scroller: true,
+      scrollOptions:{
+            useTransition:true
+          },         
       type: Panel,
       htmlClass: 'about',   
       loadingTemplate: '<div class="loading"></div>',          

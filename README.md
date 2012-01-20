@@ -7,5 +7,4 @@ Default <- Event <- TEDx
 
 If you do modifications that do not concern TEDx, you should make them in the Event template or in the Default Template (Event is a fork from Default)
 Try to only do modiications specific to template tedx here. Thanks.
-
-See http://help.github.com/fork-a-repo/ to learn how to use "upstream" git repository : the Event template should be an "upstream" of this one.
+Then, you have to cherry-pick these commits : add event as an upstream remote, fetch upstream and cherry-pick the commits

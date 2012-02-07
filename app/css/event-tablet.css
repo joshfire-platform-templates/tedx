@@ -400,6 +400,10 @@ li.mainitemlist.list .event {
 }
 
 li.mainitemlist.list .event .startDate {
+  display: none;
+}
+
+li.mainitemlist.list .event .startTime {
   margin-top: 0;
   margin-left: 5px;
 

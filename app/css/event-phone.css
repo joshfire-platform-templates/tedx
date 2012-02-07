@@ -349,7 +349,11 @@ li.mainitemlist.list .title {
   padding: 0 20px 0 15px;
 }
 
-.event .startDate {
+.event .startDate{
+  display:none;
+}
+
+.event .startTime {
 
   margin-left: 5px;
 

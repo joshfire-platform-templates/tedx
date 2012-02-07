@@ -296,13 +296,20 @@ margin: 20px;
   font-size: 15px; 
 }
 
-.event .startDate {
+.event .startTime {
+  display: block;
   position: absolute;
   font-size: 18px;
   font-weight: 600;
   margin-top: 7px;
 }
 
+.detailView .event .startDate {
+  display: block;
+  position: absolute;
+  font-size: 18px;
+  font-weight: 600;
+}
 
 
 .event .content {
@@ -364,6 +371,8 @@ color-stop(1.0, rgba(194,194,194,0.7))
    font-weight: 300;
 }
 
+.detailView .event .Day {
+  display:none;
 }
 
 .detailView .event .startDate {

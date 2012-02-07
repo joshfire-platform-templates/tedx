@@ -296,21 +296,12 @@ margin: 20px;
   font-size: 15px; 
 }
 
-.event .startTime {
-  display: block;
+.event .startDate {
   position: absolute;
   font-size: 18px;
   font-weight: 600;
   margin-top: 7px;
 }
-
-.detailView .event .startDate {
-  display: block;
-  position: absolute;
-  font-size: 18px;
-  font-weight: 600;
-}
-
 
 .event .content {
   font-size: 18px;

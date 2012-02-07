@@ -399,11 +399,11 @@ li.mainitemlist.list .event {
   padding: 0;
 }
 
-li.mainitemlist.list .event .startDate {
+li.mainitemlist.list .event .startDateDay {
   display: none;
 }
 
-li.mainitemlist.list .event .startTime {
+li.mainitemlist.list .event .startDate {
   margin-top: 0;
   margin-left: 5px;
 

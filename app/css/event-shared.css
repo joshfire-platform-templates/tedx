@@ -1,3 +1,9 @@
+img.applogo {
+  max-height: 80%;
+  max-width: 200px;
+  margin: 5px;
+}
+
 /* MENU LIST */
 /* à voir si ça pete pas iphone template ? auquel cas remettre dans css tablet event*/
 
@@ -119,10 +125,18 @@ li.mainitemlist.list .abstract {
 
 li.mainitemlist.list .preview {
   position: absolute;
+  left: 0;
+  top: 0;
+  width: 90px;
+  overflow: hidden;
+
 }
 
 li.mainitemlist.list .preview img {
+  max-height: 80px;
+  /*
   height: 74px;
+  */
 }
 
 li.mainitemlist .thumbnail {

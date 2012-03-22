@@ -46,10 +46,10 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
               orientation: 'left', // left means a list going down
               loadingTemplate: '<div class="loading"></div>',
               itemTemplate: '<li id="<%=itemHtmlId%>" data-josh-ui-path="<%= path %>" data-josh-grid-id="<%= item.id %>" ' + 
-                              'class="josh-List joshover item-<%= item.itemType.replace("/", "") %> "' + 
+                              'class="josh-List joshover item-<%= (item["@type"] || item.itemType).replace("/", "") %> "' + 
                               '><%= itemInner %></li>',
               itemInnerTemplate:
-                '<% if (item.itemType === "Article/Status") { %>' +
+                '<% if ((item["@type"] || item.itemType) === "Article/Status") { %>' +
                   UI.tplTweetItem +
                 '<% } else { %>' +
                   '<div class="preview"><img src="http://placehold.it/200x150" /></div>' + // TODO: replace by item.thumbnail[0].contentURL when we have it
@@ -76,10 +76,10 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
               type: List,
               loadingTemplate: '<div class="loading"></div>',
               itemTemplate: '<li id="<%=itemHtmlId%>" data-josh-ui-path="<%= path %>" data-josh-grid-id="<%= item.id %>" ' + 
-                              'class="josh-List joshover item-<%= item.itemType %> "' + 
+                              'class="josh-List joshover item-<%= item["@type"] || item.itemType %> "' + 
                               '><%= itemInner %></li>',
               itemInnerTemplate:
-                '<% if (item.itemType === "VideoObject" || item.itemType === "ImageObject") { %>' +
+                '<% if (item["@type"] || item.itemType) === "VideoObject" || (item["@type"] || item.itemType) === "ImageObject") { %>' +
                   UI.tplItemPreview +
                   '<div class="title"><%= item.name %></div>' +
                 '<% } %>',
@@ -138,7 +138,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                 '<% if (data.articleBody) { print(data.articleBody); } %>',
               onData: function(ui) {
                 var thisEl = app.ui.element('/detail/text').htmlEl;
-                if (ui.data.itemType === 'VideoObject' || ui.data.itemType === 'ImageObject') {
+                if ((ui.data["@type"] || ui.data.itemType) === 'VideoObject' || (ui.data["@type"] || ui.data.itemType) === 'ImageObject') {
                   $(thisEl).hide();
                 } else {
                   $(thisEl).show();
@@ -154,7 +154,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                 var thisEl = app.ui.element('/detail/video').htmlEl,
                     player = app.ui.element('/detail/video/player.youtube');
 
-                if ((ui.data.itemType === 'VideoObject') && ui.data.publisher && (ui.data.publisher.name === 'Youtube')) {
+                if (((ui.data['@type'] || ui.data.itemType) === 'VideoObject') && ui.data.publisher && (ui.data.publisher.name === 'Youtube')) {
                   player.playWithStaticUrl({
                     url: ui.data.url.replace('http://www.youtube.com/watch?v=', ''),
                     width: '480px'
@@ -194,7 +194,7 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
                 '<p class="date"><%= data.publishedDate %></p></div>',
               onData: function(ui) {
                 var thisEl = app.ui.element('/detail/twitter').htmlEl;
-                if (ui.data.itemType === "Article/Status") {
+                if ((ui.data["@type"] || ui.data.itemType) === "Article/Status") {
                   $(thisEl).show();
                 } else {
                   $(thisEl).hide();

@@ -1,7 +1,6 @@
-
 {
   "name": "tedx",
-  "version": "0.0.3",
+  "version": "1.1",
   "fullName": "TEDx template",
   "description": "Create TEDx apps for your TEDx event using this template designed to match TEDx branding and colors requirements.\n\nThe template generates tabular applications that may include a schedule, a directory, an about page, a news page, as well as a photo and video gallery that can be completed with pictures taken live during the event.\n\nThe template detects the type of datasources set in the configuration settings and adjusts the available views accordingly. For instance, the template displays a schedule view when it detects an ical datasource.\n\n",
   "keywords": [

@@ -21,12 +21,6 @@ ul {
   margin: 0;
 }
 
-img.applogo {
-  max-height: 90%;
-  max-width: 200px;
-  margin: 7px;
-}
-
 .loading {
   background: #fff url('../images/spinner.gif') no-repeat center center;
   width: 100%;
